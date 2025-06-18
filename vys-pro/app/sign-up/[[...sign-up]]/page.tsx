@@ -4,10 +4,11 @@ import React, { Suspense, useState } from 'react';
 import Link from 'next/link';
 import * as Clerk from '@clerk/elements/common';
 import * as SignUp from '@clerk/elements/sign-up';
-import { OrbitControls, Stage } from '@react-three/drei';
-import { Canvas, useLoader } from '@react-three/fiber';
-import { GLTFLoader } from 'three/examples/jsm/Addons.js';
-import { useFirebaseBridge } from '@/hooks/useFirebaseBridge'
+import { useFirebaseBridge } from '@/hooks/useFirebaseBridge';
+import dynamic from 'next/dynamic';
+
+const GlassesCanvas = dynamic(() => import('@/components/GlassesCanvasPage'), { ssr: false });
+
 
 
 export default function SignUpPage() {
@@ -19,11 +20,6 @@ export default function SignUpPage() {
 
 useFirebaseBridge()
 
-  function GlassesModel() {
-    const gltf = useLoader(GLTFLoader, '/assets/models/3d-glasses.gltf');
-    return <primitive object={gltf.scene} scale={2.5} />;
-  }
-
   return (
     <div className="flex justify-center items-center py-8 px-4 min-h-screen bg-gradient-to-b from-[#00204B] to-[#4D0002]">
       <div className="sign-up-card-head p-4 rounded-xl shadow-xl w-full max-w-md">     
@@ -32,14 +28,7 @@ useFirebaseBridge()
             {/* 3D Model Canvas */}
             <div className="w-full max-w-md h-[120px] overflow-hidden mb">
 
-              <Canvas>
-                <Suspense fallback={null}>
-                  <Stage environment="city" intensity={0.8}>
-                    <GlassesModel /> {/* scale={1.5} or even 1.2 */}
-                  </Stage>
-                  <OrbitControls enableZoom={false} />
-                </Suspense>
-              </Canvas>
+              <GlassesCanvas />
             </div>
 
 
