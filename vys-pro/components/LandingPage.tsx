@@ -8,7 +8,7 @@ const GlassesCanvas = dynamic(() => import('@/components/GlassesCanvasPage'), { 
 
 export default function LandingPage() {
   return (
-    <main className="min-h-screen w-full bg text-white flex flex-col items-center justify-start px-4 pt-10 sm:pt-16 md:pt-20">
+    <main className="min-h-screen w-full bg-gradient-to-b from-[#4D0002] to-[#00204B] text-white flex flex-col items-center justify-start px-4 pt-10 mt-10 sm:pt-16 md:pt-20">
       {/* Hero Header */}
       <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold text-center leading-tight mb-8">
         <span className="text-[#A1C9FF]">VYS</span>

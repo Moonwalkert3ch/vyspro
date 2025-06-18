@@ -28,7 +28,7 @@ export default function Header() {
     <>
       <header
         className={`flex justify-between items-center px-4 py-2 h-16 w-full ${
-          isSignedIn ? "bg-[#052958] outline-4 outline-[#6C0611]" : "bg_landing_outline"
+          isSignedIn ? "bg-[#052958] outline-2 outline-[#6C0611]" : "bg-[#6C0611] outline-2 outline-[#A1C9FF]"
         }`}
       >
         {/* Logo on the left */}
