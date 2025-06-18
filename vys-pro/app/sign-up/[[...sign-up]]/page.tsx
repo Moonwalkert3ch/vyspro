@@ -7,6 +7,8 @@ import * as SignUp from '@clerk/elements/sign-up';
 import { OrbitControls, Stage } from '@react-three/drei';
 import { Canvas, useLoader } from '@react-three/fiber';
 import { GLTFLoader } from 'three/examples/jsm/Addons.js';
+import { useFirebaseBridge } from '@/hooks/useFirebaseBridge'
+
 
 export default function SignUpPage() {
   const [identifier, setIdentifier] = useState('');
@@ -14,6 +16,8 @@ export default function SignUpPage() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
 //   const formRef = React.useRef<HTMLFormElement | null>(null);
+
+useFirebaseBridge()
 
   function GlassesModel() {
     const gltf = useLoader(GLTFLoader, '/assets/models/3d-glasses.gltf');
