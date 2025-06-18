@@ -46,7 +46,7 @@ export default function FirebaseUI() {
   }
 
   const signIntoFirebaseWithClerk = async () => {
-    const token = await getToken({ template: 'integration_firebase' })
+    const token = await getToken({ template: 'integrationfirebase' })
 
     const userCredentials = await signInWithCustomToken(auth, token || '')
     // The userCredentials.user object can call the methods of

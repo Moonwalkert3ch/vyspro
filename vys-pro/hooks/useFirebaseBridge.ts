@@ -31,7 +31,7 @@ export function useFirebaseBridge() {
       if (!isSignedIn || !userId || !user) return
 
       try {
-        const token = await getToken({ template: 'integration_firebase' })
+        const token = await getToken({ template: 'integrationfirebase' })
         if (!token) {
           console.warn('No Firebase token from Clerk')
           return
