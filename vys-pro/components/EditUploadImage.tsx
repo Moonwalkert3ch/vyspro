@@ -33,7 +33,7 @@ export default function EditUploadImagePage() {
           </div>
 
           {/* 5 More Slots with Plus Icons */}
-          {[...Array(5)].map((_, i) => (
+          {[...Array(8)].map((_, i) => (
             <div key={i} className="bg-white aspect-square flex items-center justify-center rounded-md">
               <Plus className="h-6 w-6 text-black" />
             </div>

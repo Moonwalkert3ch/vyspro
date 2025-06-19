@@ -47,7 +47,7 @@ export default function EditListingPage() {
     <div className="w-full -mx-4 px-4 overflow-x-auto scrollbar-hide">
         <div className="flex gap-3 w-max">
             {/* Plus sign card */}
-            <Link href="/upload-image">
+            <Link href="/edit-upload-image">
             <div className="w-20 h-20 flex-shrink-0 bg-white rounded-md flex items-center justify-center text-black text-xl font-bold hover:brightness-90">
                 +
             </div>
