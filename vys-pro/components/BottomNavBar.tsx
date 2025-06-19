@@ -1,9 +1,7 @@
 'use client';
 
-
-import { Home, User, Search, Bell, Store } from 'lucide-react';
+import { Home, User, Mail, Bell, Store } from 'lucide-react';
 import Link from 'next/link';
-
 
 export default function BottomNavBar() {
   return (
@@ -19,18 +17,24 @@ export default function BottomNavBar() {
           <User className="h-5 w-5 mb-1" />
           Profile
         </li>
-        <li className="flex flex-col items-center text-xs sm:text-sm cursor-pointer">
-          <Search className="h-5 w-5 mb-1" />
-          Search
-        </li>
-        <li className="flex flex-col items-center text-xs sm:text-sm cursor-pointer">
-          <Bell className="h-5 w-5 mb-1" />
-          Notifications
-        </li>
-        <li className="flex flex-col items-center text-xs sm:text-sm cursor-pointer">
-          <Store className="h-5 w-5 mb-1" />
-          My VYS
-        </li>
+        <Link href="/messages">
+          <li className="flex flex-col items-center text-xs sm:text-sm cursor-pointer">
+            <Mail className="h-5 w-5 mb-1" />
+            Inbox
+          </li>
+        </Link>
+        <Link href="/notifications">
+          <li className="flex flex-col items-center text-xs sm:text-sm cursor-pointer">
+            <Bell className="h-5 w-5 mb-1" />
+            Notifications
+          </li>
+        </Link>
+        <Link href="/my-listings">
+          <li className="flex flex-col items-center text-xs sm:text-sm cursor-pointer">
+            <Store className="h-5 w-5 mb-1" />
+            My VYS
+          </li>
+        </Link>
       </ul>
     </nav>
   );
