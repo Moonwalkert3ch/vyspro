@@ -2,7 +2,7 @@
 
 import { MessageCircle, ShoppingCart } from 'lucide-react';
 import BottomNavBar from '@/components/BottomNavBar';
-import Footer from '@/components/FooterPage';
+import FooterPage from '@/components/FooterPage';
 
 type NotificationType = 'message' | 'purchase';
 
