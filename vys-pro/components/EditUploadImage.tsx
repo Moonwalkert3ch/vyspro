@@ -5,7 +5,7 @@ import BottomNavBar from './BottomNavBar';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
-export default function UploadImagePage() {
+export default function EditUploadImagePage() {
   const router = useRouter();
 
   return (
@@ -15,7 +15,7 @@ export default function UploadImagePage() {
         <div className="relative w-full max-w-screen-md flex items-center justify-center h-12 mt-4 mb-6">
           {/* Left Arrow */}
           <button
-            onClick={() => router.back()}
+            onClick={() => router.push('/edit-listing')}
             className="absolute left-0"
           >
             <ArrowLeft className="text-[#A1C9FF] h-6 w-6" />
@@ -33,7 +33,7 @@ export default function UploadImagePage() {
           </div>
 
           {/* 5 More Slots with Plus Icons */}
-          {[...Array(4)].map((_, i) => (
+          {[...Array(5)].map((_, i) => (
             <div key={i} className="bg-white aspect-square flex items-center justify-center rounded-md">
               <Plus className="h-6 w-6 text-black" />
             </div>
@@ -54,5 +54,3 @@ export default function UploadImagePage() {
     </>
   );
 }
-
-// Compare this snippet from vys-app/src/components/3DModelPage.tsx:
