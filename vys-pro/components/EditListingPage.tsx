@@ -179,7 +179,7 @@ export default function EditListingPage() {
                     <Link href="/product-listings">
                         <button
                             type="submit"
-                            className="bg-[#052958] hover:bg-indigo-950 text-[#A1C9FF] outline font-semibold py-2 px-6 rounded-full transition duration-200"
+                            className="bg-[#A1C9FF] hover:bg-indigo-950 text-[#A1C9FF] outline-2 outline-[#A1C9FF] font-semibold py-2 px-6 rounded-full transition duration-200"
                         >
                             Submit
                         </button>
