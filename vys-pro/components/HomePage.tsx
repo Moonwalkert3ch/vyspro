@@ -1,25 +1,75 @@
 'use client';
 
-
-import { Search, Plus } from 'lucide-react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Search, Plus, Heart } from 'lucide-react';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import BottomNavBar from '@/components/BottomNavBar';
 
-
-
+const products = [
+  {
+    id: 1,
+    title: 'Belkin 2-In-1 MagSafe Wireless Charging Dock',
+    price: '$79.99',
+    originalPrice: '$119.99',
+    discount: '15% Off',
+    image: '/images/sample-product.png', // Replace with actual image paths
+  },
+  {
+    id: 5,
+    title: 'Belkin 2-In-1 MagSafe Wireless Charging Dock',
+    price: '$79.99',
+    originalPrice: '$119.99',
+    discount: '15% Off',
+    image: '/images/sample-product.png', // Replace with actual image paths
+  },
+  {
+    id: 6,
+    title: 'Belkin 2-In-1 MagSafe Wireless Charging Dock',
+    price: '$79.99',
+    originalPrice: '$119.99',
+    discount: '15% Off',
+    image: '/images/sample-product.png', // Replace with actual image paths
+  },
+  {
+    id: 7,
+    title: 'Belkin 2-In-1 MagSafe Wireless Charging Dock',
+    price: '$79.99',
+    originalPrice: '$119.99',
+    discount: '15% Off',
+    image: '/images/sample-product.png', // Replace with actual image paths
+  },
+  {
+    id: 8,
+    title: 'Belkin 2-In-1 MagSafe Wireless Charging Dock',
+    price: '$79.99',
+    originalPrice: '$119.99',
+    discount: '15% Off',
+    image: '/images/sample-product.png', // Replace with actual image paths
+  },
+  // Add more products as needed
+];
 
 export default function HomePage() {
   const [isFabOpen, setIsFabOpen] = useState(false);
   const router = useRouter();
   // Function to handle the floating action button click
 
-
   return (
     <>
-      <main className="min-h-screen w-full bg-indigo-950 text-[#A1C9FF] flex flex-col items-center text-center p-4 pb-32">
+      <main className="min-h-screen w-full bg-indigo-950 text-[#A1C9FF] flex flex-col p-4 pb-32">
+         {/* Page Header */}
+        <header className="w-full max-w-screen-lg mt-4 mb-4">
+            <h1 className="text-2xl sm:text-3xl font-bold text-center text-[#A1C9FF]">
+                HOME
+            </h1>
+          </header>
+           <h2 className="text-lg sm:text-xl font-semibold text-[#A1C9FF]">
+                Search
+        </h2>
         {/* Search Bar Row */}
-        <div className="w-full max-w-screen-lg flex flex-row sm:flex-row items-center gap-4 mt-4 px-4">
+        <div className="w-full max-w-screen-lg flex flex-row sm:flex-row items-center gap-2 mt-4 px-2">
           {/* Main Search Box */}
           <div className="flex items-center bg-white text-gray-500 rounded-full px-4 py-2 w-full sm:flex-1">
             <Search className="h-5 w-5 text-gray-400 mr-2" />
@@ -30,21 +80,120 @@ export default function HomePage() {
             />
           </div>
 
-
           {/* Zip Code + Go */}
-          <div className="flex items-center gap-2 w-full sm:w-auto">
+          <div className="flex items-center gap-4 w-full sm:w-auto">
             <input
               type="text"
               placeholder="Enter zip code"
-              className="rounded-md px-3 py-2 text-sm text-gray-800 placeholder-gray-400 focus:outline-none w-full sm:w-28"
+              className="rounded-md px-2 py-2 text-sm text-gray-800 placeholder-gray-400 focus:outline-none w-full sm:w-24"
             />
             <button className="bg-[#052958] text-[#A1C9FF] font-semibold px-4 py-2 rounded-md hover:bg-[#45132F] transition">
               Go
             </button>
           </div>
         </div>
-      </main>
+      
+       {/* Listings Section */}
+        <h2 className="text-lg sm:text-xl font-semibold text-[#A1C9FF] mt-8">
+                Favorites
+        </h2>
+            <section className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+              {products.map((product) => (
+                <Link
+                  key={product.id}
+                  href={`/product-details`}
+                  className="relative bg-white rounded-xl shadow-xl hover:scale-105 transition-transform duration-300 p-3 text-indigo-950"
+                  style={{
+                    boxShadow: '0 10px 20px rgba(161, 201, 255, 0.4)',
+                  }}
+                >
+                  {/* Product Image */}
+                  <div className="relative w-full h-40 bg-gray-100 rounded-lg overflow-hidden">
+                    <Image
+                      src={product.image}
+                      alt={product.title}
+                      layout="fill"
+                      objectFit="contain"
+                      className="p-2"
+                    />
+                    {/* Favorite Icon */}
+                    <div className="absolute top-2 right-2 bg-black/60 rounded-full p-1 text-white hover:bg-black/80">
+                      <Heart className="w-4 h-4 inline" />
+                      <span className="ml-1 font-bold text-sm">+</span>
+                    </div>
+                    {/* Discount Badge */}
+                    <div className="absolute bottom-2 left-2 bg-green-400 text-black text-xs font-bold px-2 py-0.5 rounded-md">
+                      {product.discount}
+                    </div>
+                  </div>
 
+                  {/* Product Info */}
+                  <div className="mt-3 space-y-1">
+                    <h3 className="text-sm font-semibold leading-tight">
+                      {product.title}
+                    </h3>
+                    <div className="flex items-center gap-2">
+                      <span className="text-base font-bold">{product.price}</span>
+                      <span className="text-sm line-through text-gray-500">
+                        {product.originalPrice}
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </section>
+
+
+      {/* Listings Section */}
+        <h2 className="text-lg sm:text-xl font-semibold text-[#A1C9FF] mt-8">
+                Listings
+        </h2>
+            <section className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+              {products.map((product) => (
+                <Link
+                  key={product.id}
+                  href={`/product-details`}
+                  className="relative bg-white rounded-xl shadow-xl hover:scale-105 transition-transform duration-300 p-3 text-indigo-950"
+                  style={{
+                    boxShadow: '0 10px 20px rgba(161, 201, 255, 0.4)',
+                  }}
+                >
+                  {/* Product Image */}
+                  <div className="relative w-full h-40 bg-gray-100 rounded-lg overflow-hidden">
+                    <Image
+                      src={product.image}
+                      alt={product.title}
+                      layout="fill"
+                      objectFit="contain"
+                      className="p-2"
+                    />
+                    {/* Favorite Icon */}
+                    <div className="absolute top-2 right-2 bg-black/60 rounded-full p-1 text-white hover:bg-black/80">
+                      <Heart className="w-4 h-4 inline" />
+                      <span className="ml-1 font-bold text-sm">+</span>
+                    </div>
+                    {/* Discount Badge */}
+                    <div className="absolute bottom-2 left-2 bg-green-400 text-black text-xs font-bold px-2 py-0.5 rounded-md">
+                      {product.discount}
+                    </div>
+                  </div>
+
+                  {/* Product Info */}
+                  <div className="mt-3 space-y-1">
+                    <h3 className="text-sm font-semibold leading-tight">
+                      {product.title}
+                    </h3>
+                    <div className="flex items-center gap-2">
+                      <span className="text-base font-bold">{product.price}</span>
+                      <span className="text-sm line-through text-gray-500">
+                        {product.originalPrice}
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </section>
+          </main>
 
       {/* Floating Action Button (FAB) */}
       <div className="fixed bottom-24 right-4 z-50">
