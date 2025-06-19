@@ -2,6 +2,7 @@
 
 import { Send } from 'lucide-react';
 import BottomNavBar from '@/components/BottomNavBar';
+import FooterPage from '@/components/FooterPage';
 
 export default function MessagesPage() {
   return (
@@ -113,6 +114,7 @@ export default function MessagesPage() {
             </section>
         </main>
 
+        <FooterPage />
         <BottomNavBar />
     </>
   );

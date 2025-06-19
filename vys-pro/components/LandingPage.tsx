@@ -87,7 +87,7 @@ export default function LandingPage() {
         <p className="text-base sm:text-lg md:text-xl mb-6">
           Join the VYS community today and start visualizing your secondhand items like never before!
         </p>
-        <Link href="/sign-in">
+        <Link href="/sign-up">
         <button className="bg_landing_outline text-[#A1C9FF] px-6 py-3 rounded-lg shadow-lg hover:bg-[#301C47] transition-colors">
           Get Started
         </button>

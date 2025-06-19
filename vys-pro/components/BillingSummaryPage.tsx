@@ -2,6 +2,7 @@
 
 import { Trash2 } from 'lucide-react';
 import BottomNavBar from '@/components/BottomNavBar';
+import FooterPage from '@/components/FooterPage';
 
 export default function BillingSummaryPage() {
   // Static example data
@@ -45,6 +46,7 @@ export default function BillingSummaryPage() {
         >
             Make Payment
         </button>
+        <FooterPage />
         </main>
         <BottomNavBar />
     </>

@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import BottomNavBar from '@/components/BottomNavBar';
 import Link from 'next/link';
+import FooterPage from '@/components/FooterPage';
 
 export default function CreateListingPage() {
   const router = useRouter();
@@ -169,6 +170,7 @@ export default function CreateListingPage() {
             </button>
           </div>
       </main>
+      <FooterPage />
 
       {/* Bottom Navigation Bar */}
       <BottomNavBar />

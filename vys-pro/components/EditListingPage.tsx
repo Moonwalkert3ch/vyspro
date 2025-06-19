@@ -5,6 +5,7 @@ import { ArrowLeft, Sparkles } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import BottomNavBar from '@/components/BottomNavBar';
 import Link from 'next/link';
+import FooterPage from '@/components/FooterPage';
 
 
 export default function EditListingPage() {
@@ -189,6 +190,7 @@ export default function EditListingPage() {
             </div>
         </main>
 
+        <FooterPage />
         <BottomNavBar />
     </>
   );

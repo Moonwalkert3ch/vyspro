@@ -4,6 +4,7 @@ import { Camera, Plus, ArrowLeft } from 'lucide-react';
 import BottomNavBar from './BottomNavBar';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import FooterPage from '@/components/FooterPage';
 
 export default function EditUploadImagePage() {
   const router = useRouter();
@@ -50,6 +51,7 @@ export default function EditUploadImagePage() {
         </div>
       </main>
 
+      <FooterPage />
       <BottomNavBar />
     </>
   );

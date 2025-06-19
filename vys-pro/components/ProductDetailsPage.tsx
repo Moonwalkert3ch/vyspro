@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Heart, ChevronDown, MessageCircle, ArrowLeft } from 'lucide-react';
 import BottomNavBar from '@/components/BottomNavBar';
 import { useRouter } from 'next/navigation';
+import FooterPage from '@/components/FooterPage';
 
 export default function ProductDetailsPage() {
   const router = useRouter();
@@ -93,6 +94,7 @@ export default function ProductDetailsPage() {
             Add to Cart
           </button>
         </div>
+        <FooterPage />
       </main>
 
       {/* Bottom Nav fixed */}

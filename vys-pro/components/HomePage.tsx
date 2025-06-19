@@ -6,6 +6,7 @@ import { Search, Plus, Heart } from 'lucide-react';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import BottomNavBar from '@/components/BottomNavBar';
+import FooterPage from '@/components/FooterPage';
 
 const products = [
   {
@@ -215,6 +216,7 @@ export default function HomePage() {
           {isFabOpen && <span className="ml-2 whitespace-nowrap text-sm">Create</span>}
         </div>
       </div>
+      <FooterPage />
       <BottomNavBar />
     </>
   );
