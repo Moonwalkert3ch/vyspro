@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import FooterPage from '@/components/FooterPage';
 
 const GlassesCanvas = dynamic(() => import('@/components/GlassesCanvasPage'), { ssr: false });
 
@@ -93,11 +94,8 @@ export default function LandingPage() {
         </Link>
       </section>
       {/* Footer Section */}
-      <footer className="w-full max-w-6xl text-center py-6 shadow-lg mt-10">
-        <p className="text-sm text-gray-400">
-          &copy; {new Date().getFullYear()} VYSMarket. All rights reserved. Powered by NuEwa Tech
-        </p>
-      </footer>                        
+      <FooterPage />
+                        
     </main>
   );
 }
