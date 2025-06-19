@@ -1,5 +1,6 @@
 'use client';
 
+import { useImageContext } from '@/context/ImageContext';
 import { useState } from 'react';
 import { ArrowLeft, Sparkles } from 'lucide-react';
 import { useRouter } from 'next/navigation';
@@ -17,7 +18,8 @@ export default function EditListingPage() {
   const [isAvailable, setIsAvailable] = useState(true);
   const [deliveryMethod, setDeliveryMethod] = useState<'pickup' | 'ship'>('pickup');
   const additionalImages = Array(5).fill('/placeholder.jpg');
-
+  const { imgs } = useImageContext();
+  const [selectedIndex, setSelectedIndex] = useState(0);
   
 
 
@@ -40,22 +42,31 @@ export default function EditListingPage() {
 {/* 3D Model Preview + Scrollable Thumbnails */}
 <div className="w-full max-w-md flex flex-col items-center gap-4 mt-8">
   {/* 3D Model Placeholder */}
-  <div className="w-full aspect-square bg-white rounded-md flex items-center justify-center text-black font-semibold text-sm">
+  {/* <div className="w-full aspect-square bg-white rounded-md flex items-center justify-center text-black font-semibold text-sm">
     3D Model Placeholder
-  </div>
+  </div> */}
+            <div className="w-full aspect-square bg-white rounded-md overflow-hidden">
+                {imgs[selectedIndex] ? (
+                    <img src={imgs[selectedIndex]} alt="Selected" className="object-cover w-full h-full" />
+                ) : (
+                <div className="flex items-center justify-center h-full text-black font-semibold">
+                    No image selected
+                </div>
+                )}
+            </div>
 
  {/* Scrollable Additional Images (Swipeable) */}
-    <div className="w-full -mx-4 px-4 overflow-x-auto scrollbar-hide">
-        <div className="flex gap-3 w-max">
+    {/* <div className="w-full -mx-4 px-4 overflow-x-auto scrollbar-hide">
+        <div className="flex gap-3 w-max"> */}
             {/* Plus sign card */}
-            <Link href="/edit-upload-image">
+            {/* <Link href="/edit-upload-image">
             <div className="w-20 h-20 flex-shrink-0 bg-white rounded-md flex items-center justify-center text-black text-xl font-bold hover:brightness-90">
                 +
             </div>
-            </Link>
+            </Link> */}
 
             {/* Image Placeholders */}
-            {additionalImages.map((src, index) => (
+            {/* {additionalImages.map((src, index) => (
             <div
                 key={index}
                 className="w-20 h-20 flex-shrink-0 bg-white rounded-md flex items-center justify-center text-black text-xs cursor-pointer hover:brightness-90"
@@ -64,7 +75,29 @@ export default function EditListingPage() {
             </div>
             ))}
         </div>
-    </div>
+    </div> */}
+        <div className="w-full -mx-4 px-4 overflow-x-auto">
+                <div className="flex gap-3 w-max">
+                  {imgs.map((src, idx) => (
+                    <button key={idx} onClick={() => setSelectedIndex(idx)}>
+                    <div className={`w-20 h-20 flex-shrink-0 bg-white rounded-md overflow-hidden border-2 ${
+                        selectedIndex === idx ? 'border-indigo-400' : 'border-transparent'}`
+                    }>
+                        {src ? (
+                        <img src={src} alt={`Thumb ${idx + 1}`} className="object-cover w-full h-full" />
+                        ) : (
+                        <div className="flex items-center justify-center text-black">+</div>
+                        )}
+                    </div>
+                    </button>
+                  ))}
+                  <Link href="/upload-image">
+                    <div className="w-20 h-20 flex-shrink-0 bg-white rounded-md flex items-center justify-center text-black text-xl font-bold hover:brightness-90">
+                        +
+                    </div>
+                  </Link>
+                </div>
+            </div>
     </div>
 
 

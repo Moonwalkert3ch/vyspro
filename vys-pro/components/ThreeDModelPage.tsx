@@ -2,9 +2,12 @@
 
 import { CheckCircle, XCircle, Camera, RotateCw } from 'lucide-react';
 import Link from 'next/link';
+import { useImageContext } from '@/context/ImageContext';
 import BottomNavBar from '@/components/BottomNavBar';
 
 export default function ThreeDModelPage() {
+  const { imgs } = useImageContext();
+  const captured = imgs[0];
   return (
     <>
         <main className="min-h-screen w-full bg-indigo-950 text-[#A1C9FF] flex flex-col p-4 pb-32 items-center">
@@ -15,8 +18,13 @@ export default function ThreeDModelPage() {
             
             {/* Placeholder for 4 3D Model Uploads in a 2x2 grid */}
              <div className="cursor-pointer bg-white w-full aspect-square max-w-md flex flex-col items-center justify-center rounded-md transition hover:brightness-95">
-            <Camera className="h-10 w-10 text-black mb-2" />
-            <span className="text-black font-medium">Capture Images/Video</span>
+            {/* <Camera className="h-10 w-10 text-black mb-2" />
+            <span className="text-black font-medium">Capture Images/Video</span> */}
+            {captured ? (
+                    <img src={captured} alt="Captured" className="object-cover w-full h-full" />
+                ) : (
+                    <div className="text-black font-medium">No image captured</div>
+                )}
         </div>
 
 

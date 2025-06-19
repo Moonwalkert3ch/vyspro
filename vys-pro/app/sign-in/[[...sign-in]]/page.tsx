@@ -18,7 +18,6 @@ import Link from 'next/link';
 import * as Clerk from '@clerk/elements/common';
 import dynamic from 'next/dynamic';
 import * as SignIn from '@clerk/elements/sign-in';
-import { useFirebaseBridge } from '@/hooks/useFirebaseBridge'
 
 
 const GlassesCanvas = dynamic(() => import('@/components/GlassesCanvasPage'), { ssr: false });
@@ -29,7 +28,6 @@ export default function SignInPage() {
   // The GlassesCanvas component is dynamically imported to prevent server-side rendering issues with Three.js.
   // The dynamic import is set to not render on the server side (ssr: false) to avoid issues with Three.js.
   // The GlassesCanvas component is dynamically imported to prevent server-side rendering issues with Three.js.
-  useFirebaseBridge()
 
     return (
     <div className="flex justify-center items-center py-8 px-4 min-h-screen bg-gradient-to-b from-[#4D0002] to-[#00204B]">

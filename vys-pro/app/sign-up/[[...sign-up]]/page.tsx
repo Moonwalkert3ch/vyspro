@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import * as Clerk from '@clerk/elements/common';
 import * as SignUp from '@clerk/elements/sign-up';
-import { useFirebaseBridge } from '@/hooks/useFirebaseBridge';
 import dynamic from 'next/dynamic';
 
 const GlassesCanvas = dynamic(() => import('@/components/GlassesCanvasPage'), { ssr: false });
@@ -18,7 +17,6 @@ export default function SignUpPage() {
   const [passwordError, setPasswordError] = useState('');
 //   const formRef = React.useRef<HTMLFormElement | null>(null);
 
-useFirebaseBridge()
 
   return (
     <div className="flex justify-center items-center py-8 px-4 min-h-screen bg-gradient-to-b from-[#00204B] to-[#4D0002]">

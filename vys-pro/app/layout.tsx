@@ -11,6 +11,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { Geist, Geist_Mono, Outfit } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import { ImageProviders } from '@/components/ImageProviders';
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -53,7 +54,9 @@ export default function RootLayout({
             </SignedIn>
           </header> */}
           <Header />
-          {children}
+            <ImageProviders>
+              {children}
+            </ImageProviders>
         </body>
       </html>
     </ClerkProvider>
