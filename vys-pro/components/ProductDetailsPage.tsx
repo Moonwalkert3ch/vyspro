@@ -1,3 +1,5 @@
+// This file is part of the Vys Pro project.
+
 'use client';
 
 import Image from 'next/image';
