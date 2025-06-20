@@ -17,6 +17,7 @@
     "@tailwindcss/postcss": "^4.1.10",
     "lucide-react": "^0.517.0",
     "next": "15.3.3",
+    "pg": "^8.16.2",
     "prisma": "^6.10.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
