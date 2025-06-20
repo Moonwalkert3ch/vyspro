@@ -12,25 +12,27 @@
     "@clerk/elements": "^0.23.33",
     "@clerk/nextjs": "^6.22.0",
     "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
+    "@prisma/client": "^6.10.1",
     "@react-three/drei": "^10.3.0",
     "@react-three/fiber": "^9.1.2",
     "@tailwindcss/postcss": "^4.1.10",
     "lucide-react": "^0.517.0",
     "next": "15.3.3",
     "pg": "^8.16.2",
-    "prisma": "^6.10.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
+    "@types/pg": "^8.15.4",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.12",
+    "prisma": "^6.10.1",
     "typescript": "^5"
   }
 }
