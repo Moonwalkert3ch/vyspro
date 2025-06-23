@@ -86,7 +86,7 @@ export default function UploadImagePage() {
         />
 
         {/* Submit Button */}
-        <div className="mt-10 flex justify-center w-full">
+        <div className="mt-10  mb-10flex justify-center w-full">
           <Link href="/3d-model">
             <button className="bg-[#052958] hover:bg-indigo-900 text-[#A1C9FF] outline font-semibold py-2 px-6 rounded-full transition duration-200 w-40">
               Submit
