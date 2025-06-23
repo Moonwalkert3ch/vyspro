@@ -16,7 +16,7 @@ datasource db {
 
 model User {
   id           String        @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  clerk_id     String        @map("clerk_id")
+  clerk_id     String        @unique @map("clerk_id")
   email        String
   created_at   DateTime      @default(now()) @map("created_at")
   listings     Listing[]
