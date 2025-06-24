@@ -77,10 +77,10 @@ export default function TestPage() {
           <h2 className="font-semibold mb-2">Test Images:</h2>
           <div className="grid grid-cols-2 gap-2">
             {[
-              'https://images.unsplash.com/photo-1626094309830-abbb0c99da4a',
-              'https://images.unsplash.com/photo-1570727624862-3008fe67a6be',
-              'https://images.unsplash.com/photo-1661978039834-5fdeb00054f4',
-              'https://images.unsplash.com/photo-1628583117576-a6f0f958d042'
+              'https://storage.googleapis.com/vyspro_images/turtle_1.JPG',
+              'https://storage.googleapis.com/vyspro_images/turtle_2.JPG',
+              'https://storage.googleapis.com/vyspro_images/turtle_3.JPG',
+              'https://storage.googleapis.com/vyspro_images/turtle_4.JPG',
             ].map((url, i) => (
               <img
                 key={i}
