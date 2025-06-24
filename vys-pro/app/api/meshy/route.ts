@@ -9,7 +9,7 @@ export async function POST() {
       'https://storage.googleapis.com/vyspro_images/turtle_2.JPG',
       'https://storage.googleapis.com/vyspro_images/turtle_3.JPG',
       'https://storage.googleapis.com/vyspro_images/turtle_4.JPG'
-      ]
+      ];
 
     // Create Meshy task
     const meshyResponse = await fetch(
