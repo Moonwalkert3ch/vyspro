@@ -5,11 +5,11 @@ export async function POST() {
   try {
     // Use public placeholder images (different angles of the same object)
     const imageUrls = [
-      'https://images.unsplash.com/photo-1626094309830-abbb0c99da4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1570727624862-3008fe67a6be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1661978039834-5fdeb00054f4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1628583117576-a6f0f958d042?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80'
-    ];
+      'https://storage.googleapis.com/vyspro_images/turtle_1.JPG',
+      'https://storage.googleapis.com/vyspro_images/turtle_2.JPG',
+      'https://storage.googleapis.com/vyspro_images/turtle_3.JPG',
+      'https://storage.googleapis.com/vyspro_images/turtle_4.JPG'
+      }
 
     // Create Meshy task
     const meshyResponse = await fetch(
