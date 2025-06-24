@@ -168,7 +168,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/moonwalker/nextjsApp/vyspro/vys-pro/clean-vyspro/vys-pro/src/generated/prisma",
+      "value": "/home/moonwalker/nextjsApp/vys/vyspro/vys-pro/src/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -182,11 +182,11 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/moonwalker/nextjsApp/vyspro/vys-pro/clean-vyspro/vys-pro/prisma/schema.prisma",
+    "sourceFilePath": "/home/moonwalker/nextjsApp/vys/vyspro/vys-pro/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../../.env",
+    "rootEnvPath": null,
     "schemaEnvPath": "../../../.env"
   },
   "relativePath": "../../../prisma",
@@ -199,13 +199,13 @@ const config = {
   "inlineDatasources": {
     "db": {
       "url": {
-        "fromEnvVar": "GCP_DATABASE_URL",
+        "fromEnvVar": "DATABASE_URL",
         "value": null
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"GCP_DATABASE_URL\")\n}\n\nmodel User {\n  id           String        @id @default(dbgenerated(\"gen_random_uuid()\")) @db.Uuid\n  clerk_id     String        @map(\"clerk_id\")\n  email        String\n  created_at   DateTime      @default(now()) @map(\"created_at\")\n  listings     Listing[]\n  transactions Transaction[]\n\n  @@map(\"users\")\n}\n\nmodel Listing {\n  id           String         @id @default(dbgenerated(\"gen_random_uuid()\")) @db.Uuid\n  title        String\n  description  String?\n  price        Float\n  status       String\n  created_at   DateTime       @default(now()) @map(\"created_at\")\n  user_id      String         @map(\"user_id\") @db.Uuid\n  images       ListingImage[]\n  models       ListingModel[]\n  users        User?          @relation(fields: [user_id], references: [id])\n  transactions Transaction[]\n\n  @@map(\"listings\")\n}\n\nmodel ListingImage {\n  id         String  @id @default(dbgenerated(\"gen_random_uuid()\")) @db.Uuid\n  image_url  String\n  listing_id String  @db.Uuid\n  listing    Listing @relation(fields: [listing_id], references: [id])\n\n  @@map(\"listing_images\")\n}\n\nmodel ListingModel {\n  id           String   @id @default(dbgenerated(\"gen_random_uuid()\")) @db.Uuid\n  model_url    String\n  meshy_job_id String?\n  status       String\n  created_at   DateTime @default(now())\n  listing_id   String   @db.Uuid\n  listing      Listing  @relation(fields: [listing_id], references: [id])\n\n  @@map(\"listing_models\")\n}\n\nmodel Transaction {\n  id                String   @id @default(dbgenerated(\"gen_random_uuid()\")) @db.Uuid\n  stripe_session_id String?  @map(\"stripe_session_id\")\n  amount            Float\n  status            String\n  created_at        DateTime @default(now()) @map(\"created_at\")\n  buyer_id          String   @map(\"buyer_id\") @db.Uuid\n  listing_id        String   @map(\"listing_id\") @db.Uuid\n  listing           Listing  @relation(fields: [listing_id], references: [id])\n  buyer             User?    @relation(fields: [buyer_id], references: [id])\n\n  @@map(\"transactions\")\n}\n",
-  "inlineSchemaHash": "b51df53a6d101da60c20c57890b52ae82f6b9c7033dd2ac538f1e93c752d59ea",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id           String        @id @default(dbgenerated(\"gen_random_uuid()\")) @db.Uuid\n  clerk_id     String        @map(\"clerk_id\")\n  email        String\n  created_at   DateTime      @default(now()) @map(\"created_at\")\n  listings     Listing[]\n  transactions Transaction[]\n\n  @@map(\"users\")\n}\n\nmodel Listing {\n  id           String         @id @default(dbgenerated(\"gen_random_uuid()\")) @db.Uuid\n  title        String\n  description  String?\n  price        Float\n  status       String\n  created_at   DateTime       @default(now()) @map(\"created_at\")\n  user_id      String         @map(\"user_id\") @db.Uuid\n  images       ListingImage[]\n  models       ListingModel[]\n  users        User?          @relation(fields: [user_id], references: [id])\n  transactions Transaction[]\n\n  @@map(\"listings\")\n}\n\nmodel ListingImage {\n  id         String  @id @default(dbgenerated(\"gen_random_uuid()\")) @db.Uuid\n  image_url  String\n  listing_id String  @db.Uuid\n  listing    Listing @relation(fields: [listing_id], references: [id])\n\n  @@map(\"listing_images\")\n}\n\nmodel ListingModel {\n  id           String   @id @default(dbgenerated(\"gen_random_uuid()\")) @db.Uuid\n  model_url    String\n  meshy_job_id String?\n  status       String\n  created_at   DateTime @default(now())\n  listing_id   String   @db.Uuid\n  listing      Listing  @relation(fields: [listing_id], references: [id])\n\n  @@map(\"listing_models\")\n}\n\nmodel Transaction {\n  id                String   @id @default(dbgenerated(\"gen_random_uuid()\")) @db.Uuid\n  stripe_session_id String?  @map(\"stripe_session_id\")\n  amount            Float\n  status            String\n  created_at        DateTime @default(now()) @map(\"created_at\")\n  buyer_id          String   @map(\"buyer_id\") @db.Uuid\n  listing_id        String   @map(\"listing_id\") @db.Uuid\n  listing           Listing  @relation(fields: [listing_id], references: [id])\n  buyer             User?    @relation(fields: [buyer_id], references: [id])\n\n  @@map(\"transactions\")\n}\n",
+  "inlineSchemaHash": "44e6acae6f94c1fd6f169fc800fcf0b8546349d956883040e8c112a0e5eb9a6c",
   "copyEngine": true
 }
 config.dirname = '/'
@@ -217,7 +217,7 @@ config.compilerWasm = undefined
 
 config.injectableEdgeEnv = () => ({
   parsed: {
-    GCP_DATABASE_URL: typeof globalThis !== 'undefined' && globalThis['GCP_DATABASE_URL'] || typeof process !== 'undefined' && process.env && process.env.GCP_DATABASE_URL || undefined
+    DATABASE_URL: typeof globalThis !== 'undefined' && globalThis['DATABASE_URL'] || typeof process !== 'undefined' && process.env && process.env.DATABASE_URL || undefined
   }
 })
 
