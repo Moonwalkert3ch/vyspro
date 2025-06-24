@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import BottomNavBar from '@/components/BottomNavBar';
 import Link from 'next/link';
 import FooterPage from '@/components/FooterPage';
+import ModelViewer from './ModelViewer';
 
 
 export default function EditListingPage() {
@@ -41,7 +42,7 @@ export default function EditListingPage() {
 <div className="w-full max-w-md flex flex-col items-center gap-4 mt-8">
   {/* 3D Model Placeholder */}
   <div className="w-full aspect-square bg-white rounded-md flex items-center justify-center text-black font-semibold text-sm">
-    3D Model Placeholder
+    <ModelViewer url={''}/>
   </div>
 
  {/* Scrollable Additional Images (Swipeable) */}
