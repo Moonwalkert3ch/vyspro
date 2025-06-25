@@ -5,6 +5,9 @@ import Link from 'next/link';
 import * as Clerk from '@clerk/elements/common';
 import * as SignUp from '@clerk/elements/sign-up';
 import dynamic from 'next/dynamic';
+import { useUser } from '@clerk/nextjs';
+import { useEffect } from 'react';
+
 
 const GlassesCanvas = dynamic(() => import('@/components/GlassesCanvasPage'), { ssr: false });
 
@@ -16,6 +19,34 @@ export default function SignUpPage() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
 //   const formRef = React.useRef<HTMLFormElement | null>(null);
+const { user, isSignedIn } = useUser();
+
+useEffect(() => {
+  if (isSignedIn && user) {
+    const syncUser = async () => {
+      try {
+        const res = await fetch('/api/clerk-sync', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            clerk_id: user.id,
+            email: user.primaryEmailAddress?.emailAddress || '',
+          }),
+        });
+
+        if (!res.ok) {
+          console.error('Failed to sync user with backend');
+        }
+      } catch (err) {
+        console.error('Error syncing user:', err);
+      }
+    };
+
+    syncUser();
+  }
+}, [isSignedIn, user]);
 
 
   return (
