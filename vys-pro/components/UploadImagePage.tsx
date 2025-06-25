@@ -4,7 +4,6 @@ import { useRef, useState } from 'react';
 import { Camera, Plus, ArrowLeft, X } from 'lucide-react';
 import BottomNavBar from './BottomNavBar';
 import { useRouter } from 'next/navigation';
-import Link from 'next/link';
 import Image from 'next/image';
 
 export default function UploadImagePage() {
@@ -29,6 +28,32 @@ export default function UploadImagePage() {
     newImages[index] = null;
     setImages(newImages);
   };
+
+  const handleSubmit = async () => {
+  const formData = new FormData();
+
+  images.forEach((img) => {
+    if (img) {
+      formData.append('images', img);
+    }
+  });
+
+  try {
+    const res = await fetch('/api/upload-images', {
+      method: 'POST',
+      body: formData,
+    });
+
+    if (res.ok) {
+      console.log('Images uploaded successfully');
+      router.push('/3d-model');  // ✅ Go to next page after successful upload
+    } else {
+      console.error('Upload failed');
+    }
+  } catch (error) {
+    console.error('Error during upload:', error);
+  }
+};
 
   return (
     <>
@@ -89,11 +114,13 @@ export default function UploadImagePage() {
 
         {/* Submit Button */}
         <div className="mt-10  mb-10flex justify-center w-full">
-          <Link href="/3d-model">
-            <button className="bg-[#052958] hover:bg-indigo-900 text-[#A1C9FF] outline font-semibold py-2 px-6 rounded-full transition duration-200 w-40">
-              Submit
-            </button>
-          </Link>
+          <button
+            onClick={handleSubmit}
+            className="bg-[#052958] hover:bg-indigo-900 text-[#A1C9FF] outline font-semibold py-2 px-6 rounded-full transition duration-200 w-40"
+          >
+            Submit
+          </button>
+
         </div>
       </main>
 
