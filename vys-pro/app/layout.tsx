@@ -11,6 +11,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { Geist, Geist_Mono, Outfit } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import { Analytics } from '@vercel/analytics/next';
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -54,6 +55,7 @@ export default function RootLayout({
           </header> */}
           <Header />
           {children}
+          <Analytics />
         </body>
       </html>
     </ClerkProvider>
