@@ -15,7 +15,7 @@ const products = [
     price: '$79.99',
     originalPrice: '$119.99',
     discount: '15% Off',
-    image: '/images/sample-product.png', // Replace with actual image paths
+    image: '/images/accentchair.jpg', // Replace with actual image paths
   },
   {
     id: 5,
@@ -23,7 +23,7 @@ const products = [
     price: '$79.99',
     originalPrice: '$119.99',
     discount: '15% Off',
-    image: '/images/sample-product.png', // Replace with actual image paths
+    image: '/images/couch.jpg', // Replace with actual image paths
   },
   {
     id: 6,
@@ -31,7 +31,7 @@ const products = [
     price: '$79.99',
     originalPrice: '$119.99',
     discount: '15% Off',
-    image: '/images/sample-product.png', // Replace with actual image paths
+    image: '/images/gamingchair.jpg', // Replace with actual image paths
   },
   {
     id: 7,
@@ -39,7 +39,7 @@ const products = [
     price: '$79.99',
     originalPrice: '$119.99',
     discount: '15% Off',
-    image: '/images/sample-product.png', // Replace with actual image paths
+    image: '/images/lamp.jpg', // Replace with actual image paths
   },
   {
     id: 8,
@@ -47,7 +47,7 @@ const products = [
     price: '$79.99',
     originalPrice: '$119.99',
     discount: '15% Off',
-    image: '/images/sample-product.png', // Replace with actual image paths
+    image: '/images/plant.jpg', // Replace with actual image paths
   },
   // Add more products as needed
 ];
@@ -113,9 +113,10 @@ export default function HomePage() {
                     <Image
                       src={product.image}
                       alt={product.title}
-                      layout="fill"
                       objectFit="contain"
                       className="p-2"
+                      width={300}
+                      height={200}
                     />
                     {/* Favorite Icon */}
                     <div className="absolute top-2 right-2 bg-black/60 rounded-full p-1 text-white hover:bg-black/80">
@@ -164,9 +165,10 @@ export default function HomePage() {
                     <Image
                       src={product.image}
                       alt={product.title}
-                      layout="fill"
                       objectFit="contain"
                       className="p-2"
+                      width={300}
+                      height={200}
                     />
                     {/* Favorite Icon */}
                     <div className="absolute top-2 right-2 bg-black/60 rounded-full p-1 text-white hover:bg-black/80">
