@@ -60,6 +60,8 @@ export default function UploadImagePage() {
                     src={URL.createObjectURL(img)}
                     alt={`Uploaded ${i}`}
                     className="object-cover w-full h-full rounded-md"
+                    width={200}
+                    height={200}
                   />
                   <button
                     onClick={() => removeImage(i)}
