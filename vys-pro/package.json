@@ -12,7 +12,6 @@
   "dependencies": {
     "@clerk/elements": "^0.23.33",
     "@clerk/nextjs": "^6.22.0",
-    "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
     "@google-cloud/storage": "^7.16.0",
     "@prisma/client": "^6.10.1",
     "@react-three/drei": "^10.3.0",
