@@ -29,6 +29,7 @@
     "@eslint/eslintrc": "^3",
     "@types/google-cloud__storage": "^2.3.1",
     "@types/node": "^20",
+    "@types/node-fetch": "^2.6.12",
     "@types/pg": "^8.15.4",
     "@types/react": "^19",
     "@types/react-dom": "^19",

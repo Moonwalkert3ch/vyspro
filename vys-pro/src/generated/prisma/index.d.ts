@@ -7402,7 +7402,7 @@ export namespace Prisma {
     title: string
     description?: string | null
     price: number
-    status: string
+    status?: string
     created_at?: Date | string
     images?: ListingImageCreateNestedManyWithoutListingInput
     models?: ListingModelCreateNestedManyWithoutListingInput
@@ -7415,7 +7415,7 @@ export namespace Prisma {
     title: string
     description?: string | null
     price: number
-    status: string
+    status?: string
     created_at?: Date | string
     user_id: string
     images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
@@ -7454,7 +7454,7 @@ export namespace Prisma {
     title: string
     description?: string | null
     price: number
-    status: string
+    status?: string
     created_at?: Date | string
     user_id: string
   }
@@ -8461,7 +8461,7 @@ export namespace Prisma {
     title: string
     description?: string | null
     price: number
-    status: string
+    status?: string
     created_at?: Date | string
     images?: ListingImageCreateNestedManyWithoutListingInput
     models?: ListingModelCreateNestedManyWithoutListingInput
@@ -8473,7 +8473,7 @@ export namespace Prisma {
     title: string
     description?: string | null
     price: number
-    status: string
+    status?: string
     created_at?: Date | string
     images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
     models?: ListingModelUncheckedCreateNestedManyWithoutListingInput
@@ -8772,7 +8772,7 @@ export namespace Prisma {
     title: string
     description?: string | null
     price: number
-    status: string
+    status?: string
     created_at?: Date | string
     models?: ListingModelCreateNestedManyWithoutListingInput
     users?: UserCreateNestedOneWithoutListingsInput
@@ -8784,7 +8784,7 @@ export namespace Prisma {
     title: string
     description?: string | null
     price: number
-    status: string
+    status?: string
     created_at?: Date | string
     user_id: string
     models?: ListingModelUncheckedCreateNestedManyWithoutListingInput
@@ -8836,7 +8836,7 @@ export namespace Prisma {
     title: string
     description?: string | null
     price: number
-    status: string
+    status?: string
     created_at?: Date | string
     images?: ListingImageCreateNestedManyWithoutListingInput
     users?: UserCreateNestedOneWithoutListingsInput
@@ -8848,7 +8848,7 @@ export namespace Prisma {
     title: string
     description?: string | null
     price: number
-    status: string
+    status?: string
     created_at?: Date | string
     user_id: string
     images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
@@ -8900,7 +8900,7 @@ export namespace Prisma {
     title: string
     description?: string | null
     price: number
-    status: string
+    status?: string
     created_at?: Date | string
     images?: ListingImageCreateNestedManyWithoutListingInput
     models?: ListingModelCreateNestedManyWithoutListingInput
@@ -8912,7 +8912,7 @@ export namespace Prisma {
     title: string
     description?: string | null
     price: number
-    status: string
+    status?: string
     created_at?: Date | string
     user_id: string
     images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
@@ -9012,7 +9012,7 @@ export namespace Prisma {
     title: string
     description?: string | null
     price: number
-    status: string
+    status?: string
     created_at?: Date | string
   }
 

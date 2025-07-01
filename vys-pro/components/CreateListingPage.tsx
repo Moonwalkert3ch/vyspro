@@ -16,7 +16,7 @@ export default function CreateListingPage() {
   const [isDescriptionFocused, setIsDescriptionFocused] = useState(false);
   const [isAvailable, setIsAvailable] = useState(true);
   const [deliveryMethod, setDeliveryMethod] = useState<'pickup' | 'ship'>('pickup');
- 
+
   return (
     <>
       <main className="min-h-screen w-full bg-indigo-950 text-[#A1C9FF] flex flex-col items-center px-4 pb-32">
@@ -26,7 +26,6 @@ export default function CreateListingPage() {
             <button onClick={() => router.back()}>
               <ArrowLeft className="text-[#A1C9FF] h-6 w-6" />
             </button>
-         
           <h1 className="text-2xl font-bold text-center flex-1 -ml-6">CREATE LISTING</h1>
         </div>
 
