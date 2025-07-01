@@ -168,7 +168,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/empty/Code/vyspro/vys-pro/src/generated/prisma",
+      "value": "/home/puzzle/vyspro/vys-pro/src/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -182,7 +182,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/empty/Code/vyspro/vys-pro/prisma/schema.prisma",
+    "sourceFilePath": "/home/puzzle/vyspro/vys-pro/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {

@@ -30,30 +30,40 @@ export default function UploadImagePage() {
   };
 
   const handleSubmit = async () => {
-  const formData = new FormData();
+    const formData = new FormData();
 
-  images.forEach((img) => {
-    if (img) {
-      formData.append('images', img);
-    }
-  });
-
-  try {
-    const res = await fetch('/api/upload-images', {
-      method: 'POST',
-      body: formData,
+    images.forEach((img) => {
+      if (img) {
+        formData.append('images', img);
+      }
     });
 
-    if (res.ok) {
-      console.log('Images uploaded successfully');
-      router.push('/3d-model');  // ✅ Go to next page after successful upload
-    } else {
-      console.error('Upload failed');
+    try {
+      const res = await fetch('/api/upload-images', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!res.ok) {
+        console.error('Upload failed');
+        return;
+      }
+
+      const data = await res.json();
+      const { imageUrls } = data;
+
+      console.log('Uploaded Image URLs:', imageUrls);
+
+      // Save to sessionStorage or pass to next page via router
+      sessionStorage.setItem('uploadedImageUrls', JSON.stringify(imageUrls));
+
+      // Push to next step
+      router.push('/3d-model');
+    } catch (error) {
+      console.error('Error during upload:', error);
     }
-  } catch (error) {
-    console.error('Error during upload:', error);
-  }
-};
+  };
+
 
   return (
     <>
@@ -130,4 +140,3 @@ export default function UploadImagePage() {
 }
 
 
-// Compare this snippet from vys-app/src/components/3DModelPage.tsx:

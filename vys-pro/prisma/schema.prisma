@@ -30,7 +30,7 @@ model Listing {
   title        String
   description  String?
   price        Float
-  status       String
+  status       String         @default("draft")
   created_at   DateTime       @default(now()) @map("created_at")
   user_id      String         @map("user_id") @db.Uuid
   images       ListingImage[]
