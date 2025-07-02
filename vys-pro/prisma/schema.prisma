@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
   output   = "../src/generated/prisma"
@@ -26,19 +20,36 @@ model User {
 }
 
 model Listing {
-  id           String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  title        String
-  description  String?
-  price        Float
-  status       String         @default("draft")
-  created_at   DateTime       @default(now()) @map("created_at")
-  user_id      String         @map("user_id") @db.Uuid
-  images       ListingImage[]
-  models       ListingModel[]
-  users        User?          @relation(fields: [user_id], references: [id])
-  transactions Transaction[]
+  id              String         @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  title           String
+  description     String?
+  price           Float
+  status          ListingStatus  @default(DRAFT)
+  is_available    Boolean        @default(true)
+  delivery_method DeliveryMethod @default(PICKUP)
+  created_at      DateTime       @default(now()) @map("created_at")
+  updated_at      DateTime       @updatedAt @default(now())
+  user_id         String         @map("user_id") @db.Uuid
+  images          ListingImage[]
+  models          ListingModel[]
+  users           User           @relation(fields: [user_id], references: [id])
+  transactions    Transaction[]
 
   @@map("listings")
+  @@index([status])
+  @@index([user_id, created_at])
+}
+
+enum ListingStatus {
+  DRAFT
+  ACTIVE
+  ARCHIVED
+  SOLD
+}
+
+enum DeliveryMethod {
+  PICKUP
+  SHIP
 }
 
 model ListingImage {
@@ -54,7 +65,7 @@ model ListingModel {
   id           String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   model_url    String
   meshy_job_id String?
-  status       String
+  model_status ModelStatus
   created_at   DateTime @default(now())
   listing_id   String   @db.Uuid
   listing      Listing  @relation(fields: [listing_id], references: [id])
@@ -62,16 +73,30 @@ model ListingModel {
   @@map("listing_models")
 }
 
+enum ModelStatus {
+  PENDING
+  RENDERING
+  COMPLETED
+  ERROR
+}
+
 model Transaction {
-  id                String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  stripe_session_id String?  @map("stripe_session_id")
-  amount            Float
-  status            String
-  created_at        DateTime @default(now()) @map("created_at")
-  buyer_id          String   @map("buyer_id") @db.Uuid
-  listing_id        String   @map("listing_id") @db.Uuid
-  listing           Listing  @relation(fields: [listing_id], references: [id])
-  buyer             User?    @relation(fields: [buyer_id], references: [id])
+  id                  String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  stripe_session_id   String?  @map("stripe_session_id")
+  amount              Float
+  transaction_status  TransactionStatus
+  created_at          DateTime @default(now()) @map("created_at")
+  buyer_id            String   @map("buyer_id") @db.Uuid
+  listing_id          String   @map("listing_id") @db.Uuid
+  buyer               User     @relation(fields: [buyer_id], references: [id])
+  listing             Listing  @relation(fields: [listing_id], references: [id])
 
   @@map("transactions")
+}
+
+enum TransactionStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  REFUNDED
 }

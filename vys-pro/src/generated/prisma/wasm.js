@@ -20,12 +20,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 6.10.1
- * Query Engine version: 9b628578b3b7cae625e8c927178f15a170e74a9c
+ * Prisma Client JS version: 6.11.0
+ * Query Engine version: 9c30299f5a0ea26a96790e13f796dc6094db3173
  */
 Prisma.prismaVersion = {
-  client: "6.10.1",
-  engine: "9b628578b3b7cae625e8c927178f15a170e74a9c"
+  client: "6.11.0",
+  engine: "9c30299f5a0ea26a96790e13f796dc6094db3173"
 }
 
 Prisma.PrismaClientKnownRequestError = () => {
@@ -133,7 +133,10 @@ exports.Prisma.ListingScalarFieldEnum = {
   description: 'description',
   price: 'price',
   status: 'status',
+  is_available: 'is_available',
+  delivery_method: 'delivery_method',
   created_at: 'created_at',
+  updated_at: 'updated_at',
   user_id: 'user_id'
 };
 
@@ -147,7 +150,7 @@ exports.Prisma.ListingModelScalarFieldEnum = {
   id: 'id',
   model_url: 'model_url',
   meshy_job_id: 'meshy_job_id',
-  status: 'status',
+  model_status: 'model_status',
   created_at: 'created_at',
   listing_id: 'listing_id'
 };
@@ -156,7 +159,7 @@ exports.Prisma.TransactionScalarFieldEnum = {
   id: 'id',
   stripe_session_id: 'stripe_session_id',
   amount: 'amount',
-  status: 'status',
+  transaction_status: 'transaction_status',
   created_at: 'created_at',
   buyer_id: 'buyer_id',
   listing_id: 'listing_id'
@@ -176,7 +179,31 @@ exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
 };
+exports.ListingStatus = exports.$Enums.ListingStatus = {
+  DRAFT: 'DRAFT',
+  ACTIVE: 'ACTIVE',
+  ARCHIVED: 'ARCHIVED',
+  SOLD: 'SOLD'
+};
 
+exports.DeliveryMethod = exports.$Enums.DeliveryMethod = {
+  PICKUP: 'PICKUP',
+  SHIP: 'SHIP'
+};
+
+exports.ModelStatus = exports.$Enums.ModelStatus = {
+  PENDING: 'PENDING',
+  RENDERING: 'RENDERING',
+  COMPLETED: 'COMPLETED',
+  ERROR: 'ERROR'
+};
+
+exports.TransactionStatus = exports.$Enums.TransactionStatus = {
+  PENDING: 'PENDING',
+  COMPLETED: 'COMPLETED',
+  FAILED: 'FAILED',
+  REFUNDED: 'REFUNDED'
+};
 
 exports.Prisma.ModelName = {
   User: 'User',
