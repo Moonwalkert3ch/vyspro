@@ -25,11 +25,11 @@ model Listing {
   description     String?
   price           Float
   status          ListingStatus  @default(DRAFT)
-  is_available    Boolean        @default(true)
-  delivery_method DeliveryMethod @default(PICKUP)
   created_at      DateTime       @default(now()) @map("created_at")
-  updated_at      DateTime       @default(now()) @updatedAt
   user_id         String         @map("user_id") @db.Uuid
+  delivery_method DeliveryMethod @default(PICKUP)
+  is_available    Boolean        @default(true)
+  updated_at      DateTime       @default(now()) @updatedAt
   images          ListingImage[]
   models          ListingModel[]
   users           User           @relation(fields: [user_id], references: [id])
@@ -38,18 +38,6 @@ model Listing {
   @@index([status])
   @@index([user_id, created_at])
   @@map("listings")
-}
-
-enum ListingStatus {
-  DRAFT
-  ACTIVE
-  ARCHIVED
-  SOLD
-}
-
-enum DeliveryMethod {
-  PICKUP
-  SHIP
 }
 
 model ListingImage {
@@ -65,12 +53,38 @@ model ListingModel {
   id           String      @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   model_url    String
   meshy_job_id String?
-  model_status ModelStatus
   created_at   DateTime    @default(now())
   listing_id   String      @db.Uuid
+  model_status ModelStatus @default(PENDING)
   listing      Listing     @relation(fields: [listing_id], references: [id])
 
   @@map("listing_models")
+}
+
+model Transaction {
+  id                 String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  stripe_session_id  String?           @map("stripe_session_id")
+  amount             Float
+  created_at         DateTime          @default(now()) @map("created_at")
+  buyer_id           String            @map("buyer_id") @db.Uuid
+  listing_id         String            @map("listing_id") @db.Uuid
+  transaction_status TransactionStatus @default(PENDING)
+  buyer              User              @relation(fields: [buyer_id], references: [id])
+  listing            Listing           @relation(fields: [listing_id], references: [id])
+
+  @@map("transactions")
+}
+
+enum ListingStatus {
+  DRAFT
+  ACTIVE
+  ARCHIVED
+  SOLD
+}
+
+enum DeliveryMethod {
+  PICKUP
+  SHIP
 }
 
 enum ModelStatus {
@@ -78,20 +92,6 @@ enum ModelStatus {
   RENDERING
   COMPLETED
   ERROR
-}
-
-model Transaction {
-  id                 String            @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
-  stripe_session_id  String?           @map("stripe_session_id")
-  amount             Float
-  transaction_status TransactionStatus
-  created_at         DateTime          @default(now()) @map("created_at")
-  buyer_id           String            @map("buyer_id") @db.Uuid
-  listing_id         String            @map("listing_id") @db.Uuid
-  buyer              User              @relation(fields: [buyer_id], references: [id])
-  listing            Listing           @relation(fields: [listing_id], references: [id])
-
-  @@map("transactions")
 }
 
 enum TransactionStatus {

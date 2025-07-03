@@ -133,11 +133,11 @@ exports.Prisma.ListingScalarFieldEnum = {
   description: 'description',
   price: 'price',
   status: 'status',
-  is_available: 'is_available',
-  delivery_method: 'delivery_method',
   created_at: 'created_at',
-  updated_at: 'updated_at',
-  user_id: 'user_id'
+  user_id: 'user_id',
+  delivery_method: 'delivery_method',
+  is_available: 'is_available',
+  updated_at: 'updated_at'
 };
 
 exports.Prisma.ListingImageScalarFieldEnum = {
@@ -150,19 +150,19 @@ exports.Prisma.ListingModelScalarFieldEnum = {
   id: 'id',
   model_url: 'model_url',
   meshy_job_id: 'meshy_job_id',
-  model_status: 'model_status',
   created_at: 'created_at',
-  listing_id: 'listing_id'
+  listing_id: 'listing_id',
+  model_status: 'model_status'
 };
 
 exports.Prisma.TransactionScalarFieldEnum = {
   id: 'id',
   stripe_session_id: 'stripe_session_id',
   amount: 'amount',
-  transaction_status: 'transaction_status',
   created_at: 'created_at',
   buyer_id: 'buyer_id',
-  listing_id: 'listing_id'
+  listing_id: 'listing_id',
+  transaction_status: 'transaction_status'
 };
 
 exports.Prisma.SortOrder = {

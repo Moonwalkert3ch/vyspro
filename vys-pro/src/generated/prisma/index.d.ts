@@ -2491,11 +2491,11 @@ export namespace Prisma {
     description: string | null
     price: number | null
     status: $Enums.ListingStatus | null
-    is_available: boolean | null
-    delivery_method: $Enums.DeliveryMethod | null
     created_at: Date | null
-    updated_at: Date | null
     user_id: string | null
+    delivery_method: $Enums.DeliveryMethod | null
+    is_available: boolean | null
+    updated_at: Date | null
   }
 
   export type ListingMaxAggregateOutputType = {
@@ -2504,11 +2504,11 @@ export namespace Prisma {
     description: string | null
     price: number | null
     status: $Enums.ListingStatus | null
-    is_available: boolean | null
-    delivery_method: $Enums.DeliveryMethod | null
     created_at: Date | null
-    updated_at: Date | null
     user_id: string | null
+    delivery_method: $Enums.DeliveryMethod | null
+    is_available: boolean | null
+    updated_at: Date | null
   }
 
   export type ListingCountAggregateOutputType = {
@@ -2517,11 +2517,11 @@ export namespace Prisma {
     description: number
     price: number
     status: number
-    is_available: number
-    delivery_method: number
     created_at: number
-    updated_at: number
     user_id: number
+    delivery_method: number
+    is_available: number
+    updated_at: number
     _all: number
   }
 
@@ -2540,11 +2540,11 @@ export namespace Prisma {
     description?: true
     price?: true
     status?: true
-    is_available?: true
-    delivery_method?: true
     created_at?: true
-    updated_at?: true
     user_id?: true
+    delivery_method?: true
+    is_available?: true
+    updated_at?: true
   }
 
   export type ListingMaxAggregateInputType = {
@@ -2553,11 +2553,11 @@ export namespace Prisma {
     description?: true
     price?: true
     status?: true
-    is_available?: true
-    delivery_method?: true
     created_at?: true
-    updated_at?: true
     user_id?: true
+    delivery_method?: true
+    is_available?: true
+    updated_at?: true
   }
 
   export type ListingCountAggregateInputType = {
@@ -2566,11 +2566,11 @@ export namespace Prisma {
     description?: true
     price?: true
     status?: true
-    is_available?: true
-    delivery_method?: true
     created_at?: true
-    updated_at?: true
     user_id?: true
+    delivery_method?: true
+    is_available?: true
+    updated_at?: true
     _all?: true
   }
 
@@ -2666,11 +2666,11 @@ export namespace Prisma {
     description: string | null
     price: number
     status: $Enums.ListingStatus
-    is_available: boolean
-    delivery_method: $Enums.DeliveryMethod
     created_at: Date
-    updated_at: Date
     user_id: string
+    delivery_method: $Enums.DeliveryMethod
+    is_available: boolean
+    updated_at: Date
     _count: ListingCountAggregateOutputType | null
     _avg: ListingAvgAggregateOutputType | null
     _sum: ListingSumAggregateOutputType | null
@@ -2698,11 +2698,11 @@ export namespace Prisma {
     description?: boolean
     price?: boolean
     status?: boolean
-    is_available?: boolean
-    delivery_method?: boolean
     created_at?: boolean
-    updated_at?: boolean
     user_id?: boolean
+    delivery_method?: boolean
+    is_available?: boolean
+    updated_at?: boolean
     images?: boolean | Listing$imagesArgs<ExtArgs>
     models?: boolean | Listing$modelsArgs<ExtArgs>
     users?: boolean | UserDefaultArgs<ExtArgs>
@@ -2716,11 +2716,11 @@ export namespace Prisma {
     description?: boolean
     price?: boolean
     status?: boolean
-    is_available?: boolean
-    delivery_method?: boolean
     created_at?: boolean
-    updated_at?: boolean
     user_id?: boolean
+    delivery_method?: boolean
+    is_available?: boolean
+    updated_at?: boolean
     users?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["listing"]>
 
@@ -2730,11 +2730,11 @@ export namespace Prisma {
     description?: boolean
     price?: boolean
     status?: boolean
-    is_available?: boolean
-    delivery_method?: boolean
     created_at?: boolean
-    updated_at?: boolean
     user_id?: boolean
+    delivery_method?: boolean
+    is_available?: boolean
+    updated_at?: boolean
     users?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["listing"]>
 
@@ -2744,14 +2744,14 @@ export namespace Prisma {
     description?: boolean
     price?: boolean
     status?: boolean
-    is_available?: boolean
-    delivery_method?: boolean
     created_at?: boolean
-    updated_at?: boolean
     user_id?: boolean
+    delivery_method?: boolean
+    is_available?: boolean
+    updated_at?: boolean
   }
 
-  export type ListingOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "description" | "price" | "status" | "is_available" | "delivery_method" | "created_at" | "updated_at" | "user_id", ExtArgs["result"]["listing"]>
+  export type ListingOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "description" | "price" | "status" | "created_at" | "user_id" | "delivery_method" | "is_available" | "updated_at", ExtArgs["result"]["listing"]>
   export type ListingInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     images?: boolean | Listing$imagesArgs<ExtArgs>
     models?: boolean | Listing$modelsArgs<ExtArgs>
@@ -2780,11 +2780,11 @@ export namespace Prisma {
       description: string | null
       price: number
       status: $Enums.ListingStatus
-      is_available: boolean
-      delivery_method: $Enums.DeliveryMethod
       created_at: Date
-      updated_at: Date
       user_id: string
+      delivery_method: $Enums.DeliveryMethod
+      is_available: boolean
+      updated_at: Date
     }, ExtArgs["result"]["listing"]>
     composites: {}
   }
@@ -3217,11 +3217,11 @@ export namespace Prisma {
     readonly description: FieldRef<"Listing", 'String'>
     readonly price: FieldRef<"Listing", 'Float'>
     readonly status: FieldRef<"Listing", 'ListingStatus'>
-    readonly is_available: FieldRef<"Listing", 'Boolean'>
-    readonly delivery_method: FieldRef<"Listing", 'DeliveryMethod'>
     readonly created_at: FieldRef<"Listing", 'DateTime'>
-    readonly updated_at: FieldRef<"Listing", 'DateTime'>
     readonly user_id: FieldRef<"Listing", 'String'>
+    readonly delivery_method: FieldRef<"Listing", 'DeliveryMethod'>
+    readonly is_available: FieldRef<"Listing", 'Boolean'>
+    readonly updated_at: FieldRef<"Listing", 'DateTime'>
   }
     
 
@@ -4754,27 +4754,27 @@ export namespace Prisma {
     id: string | null
     model_url: string | null
     meshy_job_id: string | null
-    model_status: $Enums.ModelStatus | null
     created_at: Date | null
     listing_id: string | null
+    model_status: $Enums.ModelStatus | null
   }
 
   export type ListingModelMaxAggregateOutputType = {
     id: string | null
     model_url: string | null
     meshy_job_id: string | null
-    model_status: $Enums.ModelStatus | null
     created_at: Date | null
     listing_id: string | null
+    model_status: $Enums.ModelStatus | null
   }
 
   export type ListingModelCountAggregateOutputType = {
     id: number
     model_url: number
     meshy_job_id: number
-    model_status: number
     created_at: number
     listing_id: number
+    model_status: number
     _all: number
   }
 
@@ -4783,27 +4783,27 @@ export namespace Prisma {
     id?: true
     model_url?: true
     meshy_job_id?: true
-    model_status?: true
     created_at?: true
     listing_id?: true
+    model_status?: true
   }
 
   export type ListingModelMaxAggregateInputType = {
     id?: true
     model_url?: true
     meshy_job_id?: true
-    model_status?: true
     created_at?: true
     listing_id?: true
+    model_status?: true
   }
 
   export type ListingModelCountAggregateInputType = {
     id?: true
     model_url?: true
     meshy_job_id?: true
-    model_status?: true
     created_at?: true
     listing_id?: true
+    model_status?: true
     _all?: true
   }
 
@@ -4883,9 +4883,9 @@ export namespace Prisma {
     id: string
     model_url: string
     meshy_job_id: string | null
-    model_status: $Enums.ModelStatus
     created_at: Date
     listing_id: string
+    model_status: $Enums.ModelStatus
     _count: ListingModelCountAggregateOutputType | null
     _min: ListingModelMinAggregateOutputType | null
     _max: ListingModelMaxAggregateOutputType | null
@@ -4909,9 +4909,9 @@ export namespace Prisma {
     id?: boolean
     model_url?: boolean
     meshy_job_id?: boolean
-    model_status?: boolean
     created_at?: boolean
     listing_id?: boolean
+    model_status?: boolean
     listing?: boolean | ListingDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["listingModel"]>
 
@@ -4919,9 +4919,9 @@ export namespace Prisma {
     id?: boolean
     model_url?: boolean
     meshy_job_id?: boolean
-    model_status?: boolean
     created_at?: boolean
     listing_id?: boolean
+    model_status?: boolean
     listing?: boolean | ListingDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["listingModel"]>
 
@@ -4929,9 +4929,9 @@ export namespace Prisma {
     id?: boolean
     model_url?: boolean
     meshy_job_id?: boolean
-    model_status?: boolean
     created_at?: boolean
     listing_id?: boolean
+    model_status?: boolean
     listing?: boolean | ListingDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["listingModel"]>
 
@@ -4939,12 +4939,12 @@ export namespace Prisma {
     id?: boolean
     model_url?: boolean
     meshy_job_id?: boolean
-    model_status?: boolean
     created_at?: boolean
     listing_id?: boolean
+    model_status?: boolean
   }
 
-  export type ListingModelOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "model_url" | "meshy_job_id" | "model_status" | "created_at" | "listing_id", ExtArgs["result"]["listingModel"]>
+  export type ListingModelOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "model_url" | "meshy_job_id" | "created_at" | "listing_id" | "model_status", ExtArgs["result"]["listingModel"]>
   export type ListingModelInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     listing?: boolean | ListingDefaultArgs<ExtArgs>
   }
@@ -4964,9 +4964,9 @@ export namespace Prisma {
       id: string
       model_url: string
       meshy_job_id: string | null
-      model_status: $Enums.ModelStatus
       created_at: Date
       listing_id: string
+      model_status: $Enums.ModelStatus
     }, ExtArgs["result"]["listingModel"]>
     composites: {}
   }
@@ -5394,9 +5394,9 @@ export namespace Prisma {
     readonly id: FieldRef<"ListingModel", 'String'>
     readonly model_url: FieldRef<"ListingModel", 'String'>
     readonly meshy_job_id: FieldRef<"ListingModel", 'String'>
-    readonly model_status: FieldRef<"ListingModel", 'ModelStatus'>
     readonly created_at: FieldRef<"ListingModel", 'DateTime'>
     readonly listing_id: FieldRef<"ListingModel", 'String'>
+    readonly model_status: FieldRef<"ListingModel", 'ModelStatus'>
   }
     
 
@@ -5835,30 +5835,30 @@ export namespace Prisma {
     id: string | null
     stripe_session_id: string | null
     amount: number | null
-    transaction_status: $Enums.TransactionStatus | null
     created_at: Date | null
     buyer_id: string | null
     listing_id: string | null
+    transaction_status: $Enums.TransactionStatus | null
   }
 
   export type TransactionMaxAggregateOutputType = {
     id: string | null
     stripe_session_id: string | null
     amount: number | null
-    transaction_status: $Enums.TransactionStatus | null
     created_at: Date | null
     buyer_id: string | null
     listing_id: string | null
+    transaction_status: $Enums.TransactionStatus | null
   }
 
   export type TransactionCountAggregateOutputType = {
     id: number
     stripe_session_id: number
     amount: number
-    transaction_status: number
     created_at: number
     buyer_id: number
     listing_id: number
+    transaction_status: number
     _all: number
   }
 
@@ -5875,30 +5875,30 @@ export namespace Prisma {
     id?: true
     stripe_session_id?: true
     amount?: true
-    transaction_status?: true
     created_at?: true
     buyer_id?: true
     listing_id?: true
+    transaction_status?: true
   }
 
   export type TransactionMaxAggregateInputType = {
     id?: true
     stripe_session_id?: true
     amount?: true
-    transaction_status?: true
     created_at?: true
     buyer_id?: true
     listing_id?: true
+    transaction_status?: true
   }
 
   export type TransactionCountAggregateInputType = {
     id?: true
     stripe_session_id?: true
     amount?: true
-    transaction_status?: true
     created_at?: true
     buyer_id?: true
     listing_id?: true
+    transaction_status?: true
     _all?: true
   }
 
@@ -5992,10 +5992,10 @@ export namespace Prisma {
     id: string
     stripe_session_id: string | null
     amount: number
-    transaction_status: $Enums.TransactionStatus
     created_at: Date
     buyer_id: string
     listing_id: string
+    transaction_status: $Enums.TransactionStatus
     _count: TransactionCountAggregateOutputType | null
     _avg: TransactionAvgAggregateOutputType | null
     _sum: TransactionSumAggregateOutputType | null
@@ -6021,10 +6021,10 @@ export namespace Prisma {
     id?: boolean
     stripe_session_id?: boolean
     amount?: boolean
-    transaction_status?: boolean
     created_at?: boolean
     buyer_id?: boolean
     listing_id?: boolean
+    transaction_status?: boolean
     buyer?: boolean | UserDefaultArgs<ExtArgs>
     listing?: boolean | ListingDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["transaction"]>
@@ -6033,10 +6033,10 @@ export namespace Prisma {
     id?: boolean
     stripe_session_id?: boolean
     amount?: boolean
-    transaction_status?: boolean
     created_at?: boolean
     buyer_id?: boolean
     listing_id?: boolean
+    transaction_status?: boolean
     buyer?: boolean | UserDefaultArgs<ExtArgs>
     listing?: boolean | ListingDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["transaction"]>
@@ -6045,10 +6045,10 @@ export namespace Prisma {
     id?: boolean
     stripe_session_id?: boolean
     amount?: boolean
-    transaction_status?: boolean
     created_at?: boolean
     buyer_id?: boolean
     listing_id?: boolean
+    transaction_status?: boolean
     buyer?: boolean | UserDefaultArgs<ExtArgs>
     listing?: boolean | ListingDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["transaction"]>
@@ -6057,13 +6057,13 @@ export namespace Prisma {
     id?: boolean
     stripe_session_id?: boolean
     amount?: boolean
-    transaction_status?: boolean
     created_at?: boolean
     buyer_id?: boolean
     listing_id?: boolean
+    transaction_status?: boolean
   }
 
-  export type TransactionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "stripe_session_id" | "amount" | "transaction_status" | "created_at" | "buyer_id" | "listing_id", ExtArgs["result"]["transaction"]>
+  export type TransactionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "stripe_session_id" | "amount" | "created_at" | "buyer_id" | "listing_id" | "transaction_status", ExtArgs["result"]["transaction"]>
   export type TransactionInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     buyer?: boolean | UserDefaultArgs<ExtArgs>
     listing?: boolean | ListingDefaultArgs<ExtArgs>
@@ -6087,10 +6087,10 @@ export namespace Prisma {
       id: string
       stripe_session_id: string | null
       amount: number
-      transaction_status: $Enums.TransactionStatus
       created_at: Date
       buyer_id: string
       listing_id: string
+      transaction_status: $Enums.TransactionStatus
     }, ExtArgs["result"]["transaction"]>
     composites: {}
   }
@@ -6519,10 +6519,10 @@ export namespace Prisma {
     readonly id: FieldRef<"Transaction", 'String'>
     readonly stripe_session_id: FieldRef<"Transaction", 'String'>
     readonly amount: FieldRef<"Transaction", 'Float'>
-    readonly transaction_status: FieldRef<"Transaction", 'TransactionStatus'>
     readonly created_at: FieldRef<"Transaction", 'DateTime'>
     readonly buyer_id: FieldRef<"Transaction", 'String'>
     readonly listing_id: FieldRef<"Transaction", 'String'>
+    readonly transaction_status: FieldRef<"Transaction", 'TransactionStatus'>
   }
     
 
@@ -6967,11 +6967,11 @@ export namespace Prisma {
     description: 'description',
     price: 'price',
     status: 'status',
-    is_available: 'is_available',
-    delivery_method: 'delivery_method',
     created_at: 'created_at',
-    updated_at: 'updated_at',
-    user_id: 'user_id'
+    user_id: 'user_id',
+    delivery_method: 'delivery_method',
+    is_available: 'is_available',
+    updated_at: 'updated_at'
   };
 
   export type ListingScalarFieldEnum = (typeof ListingScalarFieldEnum)[keyof typeof ListingScalarFieldEnum]
@@ -6990,9 +6990,9 @@ export namespace Prisma {
     id: 'id',
     model_url: 'model_url',
     meshy_job_id: 'meshy_job_id',
-    model_status: 'model_status',
     created_at: 'created_at',
-    listing_id: 'listing_id'
+    listing_id: 'listing_id',
+    model_status: 'model_status'
   };
 
   export type ListingModelScalarFieldEnum = (typeof ListingModelScalarFieldEnum)[keyof typeof ListingModelScalarFieldEnum]
@@ -7002,10 +7002,10 @@ export namespace Prisma {
     id: 'id',
     stripe_session_id: 'stripe_session_id',
     amount: 'amount',
-    transaction_status: 'transaction_status',
     created_at: 'created_at',
     buyer_id: 'buyer_id',
-    listing_id: 'listing_id'
+    listing_id: 'listing_id',
+    transaction_status: 'transaction_status'
   };
 
   export type TransactionScalarFieldEnum = (typeof TransactionScalarFieldEnum)[keyof typeof TransactionScalarFieldEnum]
@@ -7097,13 +7097,6 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'Boolean'
-   */
-  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
-    
-
-
-  /**
    * Reference to a field of type 'DeliveryMethod'
    */
   export type EnumDeliveryMethodFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DeliveryMethod'>
@@ -7114,6 +7107,13 @@ export namespace Prisma {
    * Reference to a field of type 'DeliveryMethod[]'
    */
   export type ListEnumDeliveryMethodFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DeliveryMethod[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
     
 
 
@@ -7224,11 +7224,11 @@ export namespace Prisma {
     description?: StringNullableFilter<"Listing"> | string | null
     price?: FloatFilter<"Listing"> | number
     status?: EnumListingStatusFilter<"Listing"> | $Enums.ListingStatus
-    is_available?: BoolFilter<"Listing"> | boolean
-    delivery_method?: EnumDeliveryMethodFilter<"Listing"> | $Enums.DeliveryMethod
     created_at?: DateTimeFilter<"Listing"> | Date | string
-    updated_at?: DateTimeFilter<"Listing"> | Date | string
     user_id?: UuidFilter<"Listing"> | string
+    delivery_method?: EnumDeliveryMethodFilter<"Listing"> | $Enums.DeliveryMethod
+    is_available?: BoolFilter<"Listing"> | boolean
+    updated_at?: DateTimeFilter<"Listing"> | Date | string
     images?: ListingImageListRelationFilter
     models?: ListingModelListRelationFilter
     users?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -7241,11 +7241,11 @@ export namespace Prisma {
     description?: SortOrderInput | SortOrder
     price?: SortOrder
     status?: SortOrder
-    is_available?: SortOrder
-    delivery_method?: SortOrder
     created_at?: SortOrder
-    updated_at?: SortOrder
     user_id?: SortOrder
+    delivery_method?: SortOrder
+    is_available?: SortOrder
+    updated_at?: SortOrder
     images?: ListingImageOrderByRelationAggregateInput
     models?: ListingModelOrderByRelationAggregateInput
     users?: UserOrderByWithRelationInput
@@ -7261,11 +7261,11 @@ export namespace Prisma {
     description?: StringNullableFilter<"Listing"> | string | null
     price?: FloatFilter<"Listing"> | number
     status?: EnumListingStatusFilter<"Listing"> | $Enums.ListingStatus
-    is_available?: BoolFilter<"Listing"> | boolean
-    delivery_method?: EnumDeliveryMethodFilter<"Listing"> | $Enums.DeliveryMethod
     created_at?: DateTimeFilter<"Listing"> | Date | string
-    updated_at?: DateTimeFilter<"Listing"> | Date | string
     user_id?: UuidFilter<"Listing"> | string
+    delivery_method?: EnumDeliveryMethodFilter<"Listing"> | $Enums.DeliveryMethod
+    is_available?: BoolFilter<"Listing"> | boolean
+    updated_at?: DateTimeFilter<"Listing"> | Date | string
     images?: ListingImageListRelationFilter
     models?: ListingModelListRelationFilter
     users?: XOR<UserScalarRelationFilter, UserWhereInput>
@@ -7278,11 +7278,11 @@ export namespace Prisma {
     description?: SortOrderInput | SortOrder
     price?: SortOrder
     status?: SortOrder
-    is_available?: SortOrder
-    delivery_method?: SortOrder
     created_at?: SortOrder
-    updated_at?: SortOrder
     user_id?: SortOrder
+    delivery_method?: SortOrder
+    is_available?: SortOrder
+    updated_at?: SortOrder
     _count?: ListingCountOrderByAggregateInput
     _avg?: ListingAvgOrderByAggregateInput
     _max?: ListingMaxOrderByAggregateInput
@@ -7299,11 +7299,11 @@ export namespace Prisma {
     description?: StringNullableWithAggregatesFilter<"Listing"> | string | null
     price?: FloatWithAggregatesFilter<"Listing"> | number
     status?: EnumListingStatusWithAggregatesFilter<"Listing"> | $Enums.ListingStatus
-    is_available?: BoolWithAggregatesFilter<"Listing"> | boolean
-    delivery_method?: EnumDeliveryMethodWithAggregatesFilter<"Listing"> | $Enums.DeliveryMethod
     created_at?: DateTimeWithAggregatesFilter<"Listing"> | Date | string
-    updated_at?: DateTimeWithAggregatesFilter<"Listing"> | Date | string
     user_id?: UuidWithAggregatesFilter<"Listing"> | string
+    delivery_method?: EnumDeliveryMethodWithAggregatesFilter<"Listing"> | $Enums.DeliveryMethod
+    is_available?: BoolWithAggregatesFilter<"Listing"> | boolean
+    updated_at?: DateTimeWithAggregatesFilter<"Listing"> | Date | string
   }
 
   export type ListingImageWhereInput = {
@@ -7358,9 +7358,9 @@ export namespace Prisma {
     id?: UuidFilter<"ListingModel"> | string
     model_url?: StringFilter<"ListingModel"> | string
     meshy_job_id?: StringNullableFilter<"ListingModel"> | string | null
-    model_status?: EnumModelStatusFilter<"ListingModel"> | $Enums.ModelStatus
     created_at?: DateTimeFilter<"ListingModel"> | Date | string
     listing_id?: UuidFilter<"ListingModel"> | string
+    model_status?: EnumModelStatusFilter<"ListingModel"> | $Enums.ModelStatus
     listing?: XOR<ListingScalarRelationFilter, ListingWhereInput>
   }
 
@@ -7368,9 +7368,9 @@ export namespace Prisma {
     id?: SortOrder
     model_url?: SortOrder
     meshy_job_id?: SortOrderInput | SortOrder
-    model_status?: SortOrder
     created_at?: SortOrder
     listing_id?: SortOrder
+    model_status?: SortOrder
     listing?: ListingOrderByWithRelationInput
   }
 
@@ -7381,9 +7381,9 @@ export namespace Prisma {
     NOT?: ListingModelWhereInput | ListingModelWhereInput[]
     model_url?: StringFilter<"ListingModel"> | string
     meshy_job_id?: StringNullableFilter<"ListingModel"> | string | null
-    model_status?: EnumModelStatusFilter<"ListingModel"> | $Enums.ModelStatus
     created_at?: DateTimeFilter<"ListingModel"> | Date | string
     listing_id?: UuidFilter<"ListingModel"> | string
+    model_status?: EnumModelStatusFilter<"ListingModel"> | $Enums.ModelStatus
     listing?: XOR<ListingScalarRelationFilter, ListingWhereInput>
   }, "id">
 
@@ -7391,9 +7391,9 @@ export namespace Prisma {
     id?: SortOrder
     model_url?: SortOrder
     meshy_job_id?: SortOrderInput | SortOrder
-    model_status?: SortOrder
     created_at?: SortOrder
     listing_id?: SortOrder
+    model_status?: SortOrder
     _count?: ListingModelCountOrderByAggregateInput
     _max?: ListingModelMaxOrderByAggregateInput
     _min?: ListingModelMinOrderByAggregateInput
@@ -7406,9 +7406,9 @@ export namespace Prisma {
     id?: UuidWithAggregatesFilter<"ListingModel"> | string
     model_url?: StringWithAggregatesFilter<"ListingModel"> | string
     meshy_job_id?: StringNullableWithAggregatesFilter<"ListingModel"> | string | null
-    model_status?: EnumModelStatusWithAggregatesFilter<"ListingModel"> | $Enums.ModelStatus
     created_at?: DateTimeWithAggregatesFilter<"ListingModel"> | Date | string
     listing_id?: UuidWithAggregatesFilter<"ListingModel"> | string
+    model_status?: EnumModelStatusWithAggregatesFilter<"ListingModel"> | $Enums.ModelStatus
   }
 
   export type TransactionWhereInput = {
@@ -7418,10 +7418,10 @@ export namespace Prisma {
     id?: UuidFilter<"Transaction"> | string
     stripe_session_id?: StringNullableFilter<"Transaction"> | string | null
     amount?: FloatFilter<"Transaction"> | number
-    transaction_status?: EnumTransactionStatusFilter<"Transaction"> | $Enums.TransactionStatus
     created_at?: DateTimeFilter<"Transaction"> | Date | string
     buyer_id?: UuidFilter<"Transaction"> | string
     listing_id?: UuidFilter<"Transaction"> | string
+    transaction_status?: EnumTransactionStatusFilter<"Transaction"> | $Enums.TransactionStatus
     buyer?: XOR<UserScalarRelationFilter, UserWhereInput>
     listing?: XOR<ListingScalarRelationFilter, ListingWhereInput>
   }
@@ -7430,10 +7430,10 @@ export namespace Prisma {
     id?: SortOrder
     stripe_session_id?: SortOrderInput | SortOrder
     amount?: SortOrder
-    transaction_status?: SortOrder
     created_at?: SortOrder
     buyer_id?: SortOrder
     listing_id?: SortOrder
+    transaction_status?: SortOrder
     buyer?: UserOrderByWithRelationInput
     listing?: ListingOrderByWithRelationInput
   }
@@ -7445,10 +7445,10 @@ export namespace Prisma {
     NOT?: TransactionWhereInput | TransactionWhereInput[]
     stripe_session_id?: StringNullableFilter<"Transaction"> | string | null
     amount?: FloatFilter<"Transaction"> | number
-    transaction_status?: EnumTransactionStatusFilter<"Transaction"> | $Enums.TransactionStatus
     created_at?: DateTimeFilter<"Transaction"> | Date | string
     buyer_id?: UuidFilter<"Transaction"> | string
     listing_id?: UuidFilter<"Transaction"> | string
+    transaction_status?: EnumTransactionStatusFilter<"Transaction"> | $Enums.TransactionStatus
     buyer?: XOR<UserScalarRelationFilter, UserWhereInput>
     listing?: XOR<ListingScalarRelationFilter, ListingWhereInput>
   }, "id">
@@ -7457,10 +7457,10 @@ export namespace Prisma {
     id?: SortOrder
     stripe_session_id?: SortOrderInput | SortOrder
     amount?: SortOrder
-    transaction_status?: SortOrder
     created_at?: SortOrder
     buyer_id?: SortOrder
     listing_id?: SortOrder
+    transaction_status?: SortOrder
     _count?: TransactionCountOrderByAggregateInput
     _avg?: TransactionAvgOrderByAggregateInput
     _max?: TransactionMaxOrderByAggregateInput
@@ -7475,10 +7475,10 @@ export namespace Prisma {
     id?: UuidWithAggregatesFilter<"Transaction"> | string
     stripe_session_id?: StringNullableWithAggregatesFilter<"Transaction"> | string | null
     amount?: FloatWithAggregatesFilter<"Transaction"> | number
-    transaction_status?: EnumTransactionStatusWithAggregatesFilter<"Transaction"> | $Enums.TransactionStatus
     created_at?: DateTimeWithAggregatesFilter<"Transaction"> | Date | string
     buyer_id?: UuidWithAggregatesFilter<"Transaction"> | string
     listing_id?: UuidWithAggregatesFilter<"Transaction"> | string
+    transaction_status?: EnumTransactionStatusWithAggregatesFilter<"Transaction"> | $Enums.TransactionStatus
   }
 
   export type UserCreateInput = {
@@ -7544,9 +7544,9 @@ export namespace Prisma {
     description?: string | null
     price: number
     status?: $Enums.ListingStatus
-    is_available?: boolean
-    delivery_method?: $Enums.DeliveryMethod
     created_at?: Date | string
+    delivery_method?: $Enums.DeliveryMethod
+    is_available?: boolean
     updated_at?: Date | string
     images?: ListingImageCreateNestedManyWithoutListingInput
     models?: ListingModelCreateNestedManyWithoutListingInput
@@ -7560,11 +7560,11 @@ export namespace Prisma {
     description?: string | null
     price: number
     status?: $Enums.ListingStatus
-    is_available?: boolean
-    delivery_method?: $Enums.DeliveryMethod
     created_at?: Date | string
-    updated_at?: Date | string
     user_id: string
+    delivery_method?: $Enums.DeliveryMethod
+    is_available?: boolean
+    updated_at?: Date | string
     images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
     models?: ListingModelUncheckedCreateNestedManyWithoutListingInput
     transactions?: TransactionUncheckedCreateNestedManyWithoutListingInput
@@ -7576,9 +7576,9 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     price?: FloatFieldUpdateOperationsInput | number
     status?: EnumListingStatusFieldUpdateOperationsInput | $Enums.ListingStatus
-    is_available?: BoolFieldUpdateOperationsInput | boolean
-    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
+    is_available?: BoolFieldUpdateOperationsInput | boolean
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     images?: ListingImageUpdateManyWithoutListingNestedInput
     models?: ListingModelUpdateManyWithoutListingNestedInput
@@ -7592,11 +7592,11 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     price?: FloatFieldUpdateOperationsInput | number
     status?: EnumListingStatusFieldUpdateOperationsInput | $Enums.ListingStatus
-    is_available?: BoolFieldUpdateOperationsInput | boolean
-    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     user_id?: StringFieldUpdateOperationsInput | string
+    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
+    is_available?: BoolFieldUpdateOperationsInput | boolean
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
     models?: ListingModelUncheckedUpdateManyWithoutListingNestedInput
     transactions?: TransactionUncheckedUpdateManyWithoutListingNestedInput
@@ -7608,11 +7608,11 @@ export namespace Prisma {
     description?: string | null
     price: number
     status?: $Enums.ListingStatus
-    is_available?: boolean
-    delivery_method?: $Enums.DeliveryMethod
     created_at?: Date | string
-    updated_at?: Date | string
     user_id: string
+    delivery_method?: $Enums.DeliveryMethod
+    is_available?: boolean
+    updated_at?: Date | string
   }
 
   export type ListingUpdateManyMutationInput = {
@@ -7621,9 +7621,9 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     price?: FloatFieldUpdateOperationsInput | number
     status?: EnumListingStatusFieldUpdateOperationsInput | $Enums.ListingStatus
-    is_available?: BoolFieldUpdateOperationsInput | boolean
-    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
+    is_available?: BoolFieldUpdateOperationsInput | boolean
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -7633,11 +7633,11 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     price?: FloatFieldUpdateOperationsInput | number
     status?: EnumListingStatusFieldUpdateOperationsInput | $Enums.ListingStatus
-    is_available?: BoolFieldUpdateOperationsInput | boolean
-    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     user_id?: StringFieldUpdateOperationsInput | string
+    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
+    is_available?: BoolFieldUpdateOperationsInput | boolean
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ListingImageCreateInput = {
@@ -7685,8 +7685,8 @@ export namespace Prisma {
     id?: string
     model_url: string
     meshy_job_id?: string | null
-    model_status: $Enums.ModelStatus
     created_at?: Date | string
+    model_status?: $Enums.ModelStatus
     listing: ListingCreateNestedOneWithoutModelsInput
   }
 
@@ -7694,17 +7694,17 @@ export namespace Prisma {
     id?: string
     model_url: string
     meshy_job_id?: string | null
-    model_status: $Enums.ModelStatus
     created_at?: Date | string
     listing_id: string
+    model_status?: $Enums.ModelStatus
   }
 
   export type ListingModelUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     model_url?: StringFieldUpdateOperationsInput | string
     meshy_job_id?: NullableStringFieldUpdateOperationsInput | string | null
-    model_status?: EnumModelStatusFieldUpdateOperationsInput | $Enums.ModelStatus
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    model_status?: EnumModelStatusFieldUpdateOperationsInput | $Enums.ModelStatus
     listing?: ListingUpdateOneRequiredWithoutModelsNestedInput
   }
 
@@ -7712,43 +7712,43 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     model_url?: StringFieldUpdateOperationsInput | string
     meshy_job_id?: NullableStringFieldUpdateOperationsInput | string | null
-    model_status?: EnumModelStatusFieldUpdateOperationsInput | $Enums.ModelStatus
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     listing_id?: StringFieldUpdateOperationsInput | string
+    model_status?: EnumModelStatusFieldUpdateOperationsInput | $Enums.ModelStatus
   }
 
   export type ListingModelCreateManyInput = {
     id?: string
     model_url: string
     meshy_job_id?: string | null
-    model_status: $Enums.ModelStatus
     created_at?: Date | string
     listing_id: string
+    model_status?: $Enums.ModelStatus
   }
 
   export type ListingModelUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     model_url?: StringFieldUpdateOperationsInput | string
     meshy_job_id?: NullableStringFieldUpdateOperationsInput | string | null
-    model_status?: EnumModelStatusFieldUpdateOperationsInput | $Enums.ModelStatus
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    model_status?: EnumModelStatusFieldUpdateOperationsInput | $Enums.ModelStatus
   }
 
   export type ListingModelUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     model_url?: StringFieldUpdateOperationsInput | string
     meshy_job_id?: NullableStringFieldUpdateOperationsInput | string | null
-    model_status?: EnumModelStatusFieldUpdateOperationsInput | $Enums.ModelStatus
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     listing_id?: StringFieldUpdateOperationsInput | string
+    model_status?: EnumModelStatusFieldUpdateOperationsInput | $Enums.ModelStatus
   }
 
   export type TransactionCreateInput = {
     id?: string
     stripe_session_id?: string | null
     amount: number
-    transaction_status: $Enums.TransactionStatus
     created_at?: Date | string
+    transaction_status?: $Enums.TransactionStatus
     buyer: UserCreateNestedOneWithoutTransactionsInput
     listing: ListingCreateNestedOneWithoutTransactionsInput
   }
@@ -7757,18 +7757,18 @@ export namespace Prisma {
     id?: string
     stripe_session_id?: string | null
     amount: number
-    transaction_status: $Enums.TransactionStatus
     created_at?: Date | string
     buyer_id: string
     listing_id: string
+    transaction_status?: $Enums.TransactionStatus
   }
 
   export type TransactionUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     stripe_session_id?: NullableStringFieldUpdateOperationsInput | string | null
     amount?: FloatFieldUpdateOperationsInput | number
-    transaction_status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    transaction_status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
     buyer?: UserUpdateOneRequiredWithoutTransactionsNestedInput
     listing?: ListingUpdateOneRequiredWithoutTransactionsNestedInput
   }
@@ -7777,38 +7777,38 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     stripe_session_id?: NullableStringFieldUpdateOperationsInput | string | null
     amount?: FloatFieldUpdateOperationsInput | number
-    transaction_status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     buyer_id?: StringFieldUpdateOperationsInput | string
     listing_id?: StringFieldUpdateOperationsInput | string
+    transaction_status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
   }
 
   export type TransactionCreateManyInput = {
     id?: string
     stripe_session_id?: string | null
     amount: number
-    transaction_status: $Enums.TransactionStatus
     created_at?: Date | string
     buyer_id: string
     listing_id: string
+    transaction_status?: $Enums.TransactionStatus
   }
 
   export type TransactionUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     stripe_session_id?: NullableStringFieldUpdateOperationsInput | string | null
     amount?: FloatFieldUpdateOperationsInput | number
-    transaction_status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    transaction_status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
   }
 
   export type TransactionUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     stripe_session_id?: NullableStringFieldUpdateOperationsInput | string | null
     amount?: FloatFieldUpdateOperationsInput | number
-    transaction_status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     buyer_id?: StringFieldUpdateOperationsInput | string
     listing_id?: StringFieldUpdateOperationsInput | string
+    transaction_status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
   }
 
   export type UuidFilter<$PrismaModel = never> = {
@@ -7970,16 +7970,16 @@ export namespace Prisma {
     not?: NestedEnumListingStatusFilter<$PrismaModel> | $Enums.ListingStatus
   }
 
-  export type BoolFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolFilter<$PrismaModel> | boolean
-  }
-
   export type EnumDeliveryMethodFilter<$PrismaModel = never> = {
     equals?: $Enums.DeliveryMethod | EnumDeliveryMethodFieldRefInput<$PrismaModel>
     in?: $Enums.DeliveryMethod[] | ListEnumDeliveryMethodFieldRefInput<$PrismaModel>
     notIn?: $Enums.DeliveryMethod[] | ListEnumDeliveryMethodFieldRefInput<$PrismaModel>
     not?: NestedEnumDeliveryMethodFilter<$PrismaModel> | $Enums.DeliveryMethod
+  }
+
+  export type BoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
   export type ListingImageListRelationFilter = {
@@ -8018,11 +8018,11 @@ export namespace Prisma {
     description?: SortOrder
     price?: SortOrder
     status?: SortOrder
-    is_available?: SortOrder
-    delivery_method?: SortOrder
     created_at?: SortOrder
-    updated_at?: SortOrder
     user_id?: SortOrder
+    delivery_method?: SortOrder
+    is_available?: SortOrder
+    updated_at?: SortOrder
   }
 
   export type ListingAvgOrderByAggregateInput = {
@@ -8035,11 +8035,11 @@ export namespace Prisma {
     description?: SortOrder
     price?: SortOrder
     status?: SortOrder
-    is_available?: SortOrder
-    delivery_method?: SortOrder
     created_at?: SortOrder
-    updated_at?: SortOrder
     user_id?: SortOrder
+    delivery_method?: SortOrder
+    is_available?: SortOrder
+    updated_at?: SortOrder
   }
 
   export type ListingMinOrderByAggregateInput = {
@@ -8048,11 +8048,11 @@ export namespace Prisma {
     description?: SortOrder
     price?: SortOrder
     status?: SortOrder
-    is_available?: SortOrder
-    delivery_method?: SortOrder
     created_at?: SortOrder
-    updated_at?: SortOrder
     user_id?: SortOrder
+    delivery_method?: SortOrder
+    is_available?: SortOrder
+    updated_at?: SortOrder
   }
 
   export type ListingSumOrderByAggregateInput = {
@@ -8103,14 +8103,6 @@ export namespace Prisma {
     _max?: NestedEnumListingStatusFilter<$PrismaModel>
   }
 
-  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedBoolFilter<$PrismaModel>
-    _max?: NestedBoolFilter<$PrismaModel>
-  }
-
   export type EnumDeliveryMethodWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.DeliveryMethod | EnumDeliveryMethodFieldRefInput<$PrismaModel>
     in?: $Enums.DeliveryMethod[] | ListEnumDeliveryMethodFieldRefInput<$PrismaModel>
@@ -8119,6 +8111,14 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumDeliveryMethodFilter<$PrismaModel>
     _max?: NestedEnumDeliveryMethodFilter<$PrismaModel>
+  }
+
+  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
   }
 
   export type ListingScalarRelationFilter = {
@@ -8155,27 +8155,27 @@ export namespace Prisma {
     id?: SortOrder
     model_url?: SortOrder
     meshy_job_id?: SortOrder
-    model_status?: SortOrder
     created_at?: SortOrder
     listing_id?: SortOrder
+    model_status?: SortOrder
   }
 
   export type ListingModelMaxOrderByAggregateInput = {
     id?: SortOrder
     model_url?: SortOrder
     meshy_job_id?: SortOrder
-    model_status?: SortOrder
     created_at?: SortOrder
     listing_id?: SortOrder
+    model_status?: SortOrder
   }
 
   export type ListingModelMinOrderByAggregateInput = {
     id?: SortOrder
     model_url?: SortOrder
     meshy_job_id?: SortOrder
-    model_status?: SortOrder
     created_at?: SortOrder
     listing_id?: SortOrder
+    model_status?: SortOrder
   }
 
   export type EnumModelStatusWithAggregatesFilter<$PrismaModel = never> = {
@@ -8199,10 +8199,10 @@ export namespace Prisma {
     id?: SortOrder
     stripe_session_id?: SortOrder
     amount?: SortOrder
-    transaction_status?: SortOrder
     created_at?: SortOrder
     buyer_id?: SortOrder
     listing_id?: SortOrder
+    transaction_status?: SortOrder
   }
 
   export type TransactionAvgOrderByAggregateInput = {
@@ -8213,20 +8213,20 @@ export namespace Prisma {
     id?: SortOrder
     stripe_session_id?: SortOrder
     amount?: SortOrder
-    transaction_status?: SortOrder
     created_at?: SortOrder
     buyer_id?: SortOrder
     listing_id?: SortOrder
+    transaction_status?: SortOrder
   }
 
   export type TransactionMinOrderByAggregateInput = {
     id?: SortOrder
     stripe_session_id?: SortOrder
     amount?: SortOrder
-    transaction_status?: SortOrder
     created_at?: SortOrder
     buyer_id?: SortOrder
     listing_id?: SortOrder
+    transaction_status?: SortOrder
   }
 
   export type TransactionSumOrderByAggregateInput = {
@@ -8399,12 +8399,12 @@ export namespace Prisma {
     set?: $Enums.ListingStatus
   }
 
-  export type BoolFieldUpdateOperationsInput = {
-    set?: boolean
-  }
-
   export type EnumDeliveryMethodFieldUpdateOperationsInput = {
     set?: $Enums.DeliveryMethod
+  }
+
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
   }
 
   export type ListingImageUpdateManyWithoutListingNestedInput = {
@@ -8687,16 +8687,16 @@ export namespace Prisma {
     not?: NestedEnumListingStatusFilter<$PrismaModel> | $Enums.ListingStatus
   }
 
-  export type NestedBoolFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolFilter<$PrismaModel> | boolean
-  }
-
   export type NestedEnumDeliveryMethodFilter<$PrismaModel = never> = {
     equals?: $Enums.DeliveryMethod | EnumDeliveryMethodFieldRefInput<$PrismaModel>
     in?: $Enums.DeliveryMethod[] | ListEnumDeliveryMethodFieldRefInput<$PrismaModel>
     notIn?: $Enums.DeliveryMethod[] | ListEnumDeliveryMethodFieldRefInput<$PrismaModel>
     not?: NestedEnumDeliveryMethodFilter<$PrismaModel> | $Enums.DeliveryMethod
+  }
+
+  export type NestedBoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -8753,14 +8753,6 @@ export namespace Prisma {
     _max?: NestedEnumListingStatusFilter<$PrismaModel>
   }
 
-  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedBoolFilter<$PrismaModel>
-    _max?: NestedBoolFilter<$PrismaModel>
-  }
-
   export type NestedEnumDeliveryMethodWithAggregatesFilter<$PrismaModel = never> = {
     equals?: $Enums.DeliveryMethod | EnumDeliveryMethodFieldRefInput<$PrismaModel>
     in?: $Enums.DeliveryMethod[] | ListEnumDeliveryMethodFieldRefInput<$PrismaModel>
@@ -8769,6 +8761,14 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedEnumDeliveryMethodFilter<$PrismaModel>
     _max?: NestedEnumDeliveryMethodFilter<$PrismaModel>
+  }
+
+  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
   }
 
   export type NestedEnumModelStatusFilter<$PrismaModel = never> = {
@@ -8811,9 +8811,9 @@ export namespace Prisma {
     description?: string | null
     price: number
     status?: $Enums.ListingStatus
-    is_available?: boolean
-    delivery_method?: $Enums.DeliveryMethod
     created_at?: Date | string
+    delivery_method?: $Enums.DeliveryMethod
+    is_available?: boolean
     updated_at?: Date | string
     images?: ListingImageCreateNestedManyWithoutListingInput
     models?: ListingModelCreateNestedManyWithoutListingInput
@@ -8826,9 +8826,9 @@ export namespace Prisma {
     description?: string | null
     price: number
     status?: $Enums.ListingStatus
-    is_available?: boolean
-    delivery_method?: $Enums.DeliveryMethod
     created_at?: Date | string
+    delivery_method?: $Enums.DeliveryMethod
+    is_available?: boolean
     updated_at?: Date | string
     images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
     models?: ListingModelUncheckedCreateNestedManyWithoutListingInput
@@ -8849,8 +8849,8 @@ export namespace Prisma {
     id?: string
     stripe_session_id?: string | null
     amount: number
-    transaction_status: $Enums.TransactionStatus
     created_at?: Date | string
+    transaction_status?: $Enums.TransactionStatus
     listing: ListingCreateNestedOneWithoutTransactionsInput
   }
 
@@ -8858,9 +8858,9 @@ export namespace Prisma {
     id?: string
     stripe_session_id?: string | null
     amount: number
-    transaction_status: $Enums.TransactionStatus
     created_at?: Date | string
     listing_id: string
+    transaction_status?: $Enums.TransactionStatus
   }
 
   export type TransactionCreateOrConnectWithoutBuyerInput = {
@@ -8898,11 +8898,11 @@ export namespace Prisma {
     description?: StringNullableFilter<"Listing"> | string | null
     price?: FloatFilter<"Listing"> | number
     status?: EnumListingStatusFilter<"Listing"> | $Enums.ListingStatus
-    is_available?: BoolFilter<"Listing"> | boolean
-    delivery_method?: EnumDeliveryMethodFilter<"Listing"> | $Enums.DeliveryMethod
     created_at?: DateTimeFilter<"Listing"> | Date | string
-    updated_at?: DateTimeFilter<"Listing"> | Date | string
     user_id?: UuidFilter<"Listing"> | string
+    delivery_method?: EnumDeliveryMethodFilter<"Listing"> | $Enums.DeliveryMethod
+    is_available?: BoolFilter<"Listing"> | boolean
+    updated_at?: DateTimeFilter<"Listing"> | Date | string
   }
 
   export type TransactionUpsertWithWhereUniqueWithoutBuyerInput = {
@@ -8928,10 +8928,10 @@ export namespace Prisma {
     id?: UuidFilter<"Transaction"> | string
     stripe_session_id?: StringNullableFilter<"Transaction"> | string | null
     amount?: FloatFilter<"Transaction"> | number
-    transaction_status?: EnumTransactionStatusFilter<"Transaction"> | $Enums.TransactionStatus
     created_at?: DateTimeFilter<"Transaction"> | Date | string
     buyer_id?: UuidFilter<"Transaction"> | string
     listing_id?: UuidFilter<"Transaction"> | string
+    transaction_status?: EnumTransactionStatusFilter<"Transaction"> | $Enums.TransactionStatus
   }
 
   export type ListingImageCreateWithoutListingInput = {
@@ -8958,16 +8958,16 @@ export namespace Prisma {
     id?: string
     model_url: string
     meshy_job_id?: string | null
-    model_status: $Enums.ModelStatus
     created_at?: Date | string
+    model_status?: $Enums.ModelStatus
   }
 
   export type ListingModelUncheckedCreateWithoutListingInput = {
     id?: string
     model_url: string
     meshy_job_id?: string | null
-    model_status: $Enums.ModelStatus
     created_at?: Date | string
+    model_status?: $Enums.ModelStatus
   }
 
   export type ListingModelCreateOrConnectWithoutListingInput = {
@@ -9005,8 +9005,8 @@ export namespace Prisma {
     id?: string
     stripe_session_id?: string | null
     amount: number
-    transaction_status: $Enums.TransactionStatus
     created_at?: Date | string
+    transaction_status?: $Enums.TransactionStatus
     buyer: UserCreateNestedOneWithoutTransactionsInput
   }
 
@@ -9014,9 +9014,9 @@ export namespace Prisma {
     id?: string
     stripe_session_id?: string | null
     amount: number
-    transaction_status: $Enums.TransactionStatus
     created_at?: Date | string
     buyer_id: string
+    transaction_status?: $Enums.TransactionStatus
   }
 
   export type TransactionCreateOrConnectWithoutListingInput = {
@@ -9077,9 +9077,9 @@ export namespace Prisma {
     id?: UuidFilter<"ListingModel"> | string
     model_url?: StringFilter<"ListingModel"> | string
     meshy_job_id?: StringNullableFilter<"ListingModel"> | string | null
-    model_status?: EnumModelStatusFilter<"ListingModel"> | $Enums.ModelStatus
     created_at?: DateTimeFilter<"ListingModel"> | Date | string
     listing_id?: UuidFilter<"ListingModel"> | string
+    model_status?: EnumModelStatusFilter<"ListingModel"> | $Enums.ModelStatus
   }
 
   export type UserUpsertWithoutListingsInput = {
@@ -9131,9 +9131,9 @@ export namespace Prisma {
     description?: string | null
     price: number
     status?: $Enums.ListingStatus
-    is_available?: boolean
-    delivery_method?: $Enums.DeliveryMethod
     created_at?: Date | string
+    delivery_method?: $Enums.DeliveryMethod
+    is_available?: boolean
     updated_at?: Date | string
     models?: ListingModelCreateNestedManyWithoutListingInput
     users: UserCreateNestedOneWithoutListingsInput
@@ -9146,11 +9146,11 @@ export namespace Prisma {
     description?: string | null
     price: number
     status?: $Enums.ListingStatus
-    is_available?: boolean
-    delivery_method?: $Enums.DeliveryMethod
     created_at?: Date | string
-    updated_at?: Date | string
     user_id: string
+    delivery_method?: $Enums.DeliveryMethod
+    is_available?: boolean
+    updated_at?: Date | string
     models?: ListingModelUncheckedCreateNestedManyWithoutListingInput
     transactions?: TransactionUncheckedCreateNestedManyWithoutListingInput
   }
@@ -9177,9 +9177,9 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     price?: FloatFieldUpdateOperationsInput | number
     status?: EnumListingStatusFieldUpdateOperationsInput | $Enums.ListingStatus
-    is_available?: BoolFieldUpdateOperationsInput | boolean
-    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
+    is_available?: BoolFieldUpdateOperationsInput | boolean
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     models?: ListingModelUpdateManyWithoutListingNestedInput
     users?: UserUpdateOneRequiredWithoutListingsNestedInput
@@ -9192,11 +9192,11 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     price?: FloatFieldUpdateOperationsInput | number
     status?: EnumListingStatusFieldUpdateOperationsInput | $Enums.ListingStatus
-    is_available?: BoolFieldUpdateOperationsInput | boolean
-    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     user_id?: StringFieldUpdateOperationsInput | string
+    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
+    is_available?: BoolFieldUpdateOperationsInput | boolean
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     models?: ListingModelUncheckedUpdateManyWithoutListingNestedInput
     transactions?: TransactionUncheckedUpdateManyWithoutListingNestedInput
   }
@@ -9207,9 +9207,9 @@ export namespace Prisma {
     description?: string | null
     price: number
     status?: $Enums.ListingStatus
-    is_available?: boolean
-    delivery_method?: $Enums.DeliveryMethod
     created_at?: Date | string
+    delivery_method?: $Enums.DeliveryMethod
+    is_available?: boolean
     updated_at?: Date | string
     images?: ListingImageCreateNestedManyWithoutListingInput
     users: UserCreateNestedOneWithoutListingsInput
@@ -9222,11 +9222,11 @@ export namespace Prisma {
     description?: string | null
     price: number
     status?: $Enums.ListingStatus
-    is_available?: boolean
-    delivery_method?: $Enums.DeliveryMethod
     created_at?: Date | string
-    updated_at?: Date | string
     user_id: string
+    delivery_method?: $Enums.DeliveryMethod
+    is_available?: boolean
+    updated_at?: Date | string
     images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
     transactions?: TransactionUncheckedCreateNestedManyWithoutListingInput
   }
@@ -9253,9 +9253,9 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     price?: FloatFieldUpdateOperationsInput | number
     status?: EnumListingStatusFieldUpdateOperationsInput | $Enums.ListingStatus
-    is_available?: BoolFieldUpdateOperationsInput | boolean
-    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
+    is_available?: BoolFieldUpdateOperationsInput | boolean
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     images?: ListingImageUpdateManyWithoutListingNestedInput
     users?: UserUpdateOneRequiredWithoutListingsNestedInput
@@ -9268,11 +9268,11 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     price?: FloatFieldUpdateOperationsInput | number
     status?: EnumListingStatusFieldUpdateOperationsInput | $Enums.ListingStatus
-    is_available?: BoolFieldUpdateOperationsInput | boolean
-    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     user_id?: StringFieldUpdateOperationsInput | string
+    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
+    is_available?: BoolFieldUpdateOperationsInput | boolean
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
     transactions?: TransactionUncheckedUpdateManyWithoutListingNestedInput
   }
@@ -9304,9 +9304,9 @@ export namespace Prisma {
     description?: string | null
     price: number
     status?: $Enums.ListingStatus
-    is_available?: boolean
-    delivery_method?: $Enums.DeliveryMethod
     created_at?: Date | string
+    delivery_method?: $Enums.DeliveryMethod
+    is_available?: boolean
     updated_at?: Date | string
     images?: ListingImageCreateNestedManyWithoutListingInput
     models?: ListingModelCreateNestedManyWithoutListingInput
@@ -9319,11 +9319,11 @@ export namespace Prisma {
     description?: string | null
     price: number
     status?: $Enums.ListingStatus
-    is_available?: boolean
-    delivery_method?: $Enums.DeliveryMethod
     created_at?: Date | string
-    updated_at?: Date | string
     user_id: string
+    delivery_method?: $Enums.DeliveryMethod
+    is_available?: boolean
+    updated_at?: Date | string
     images?: ListingImageUncheckedCreateNestedManyWithoutListingInput
     models?: ListingModelUncheckedCreateNestedManyWithoutListingInput
   }
@@ -9377,9 +9377,9 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     price?: FloatFieldUpdateOperationsInput | number
     status?: EnumListingStatusFieldUpdateOperationsInput | $Enums.ListingStatus
-    is_available?: BoolFieldUpdateOperationsInput | boolean
-    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
+    is_available?: BoolFieldUpdateOperationsInput | boolean
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     images?: ListingImageUpdateManyWithoutListingNestedInput
     models?: ListingModelUpdateManyWithoutListingNestedInput
@@ -9392,11 +9392,11 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     price?: FloatFieldUpdateOperationsInput | number
     status?: EnumListingStatusFieldUpdateOperationsInput | $Enums.ListingStatus
-    is_available?: BoolFieldUpdateOperationsInput | boolean
-    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
-    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     user_id?: StringFieldUpdateOperationsInput | string
+    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
+    is_available?: BoolFieldUpdateOperationsInput | boolean
+    updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
     models?: ListingModelUncheckedUpdateManyWithoutListingNestedInput
   }
@@ -9407,9 +9407,9 @@ export namespace Prisma {
     description?: string | null
     price: number
     status?: $Enums.ListingStatus
-    is_available?: boolean
-    delivery_method?: $Enums.DeliveryMethod
     created_at?: Date | string
+    delivery_method?: $Enums.DeliveryMethod
+    is_available?: boolean
     updated_at?: Date | string
   }
 
@@ -9417,9 +9417,9 @@ export namespace Prisma {
     id?: string
     stripe_session_id?: string | null
     amount: number
-    transaction_status: $Enums.TransactionStatus
     created_at?: Date | string
     listing_id: string
+    transaction_status?: $Enums.TransactionStatus
   }
 
   export type ListingUpdateWithoutUsersInput = {
@@ -9428,9 +9428,9 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     price?: FloatFieldUpdateOperationsInput | number
     status?: EnumListingStatusFieldUpdateOperationsInput | $Enums.ListingStatus
-    is_available?: BoolFieldUpdateOperationsInput | boolean
-    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
+    is_available?: BoolFieldUpdateOperationsInput | boolean
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     images?: ListingImageUpdateManyWithoutListingNestedInput
     models?: ListingModelUpdateManyWithoutListingNestedInput
@@ -9443,9 +9443,9 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     price?: FloatFieldUpdateOperationsInput | number
     status?: EnumListingStatusFieldUpdateOperationsInput | $Enums.ListingStatus
-    is_available?: BoolFieldUpdateOperationsInput | boolean
-    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
+    is_available?: BoolFieldUpdateOperationsInput | boolean
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
     images?: ListingImageUncheckedUpdateManyWithoutListingNestedInput
     models?: ListingModelUncheckedUpdateManyWithoutListingNestedInput
@@ -9458,9 +9458,9 @@ export namespace Prisma {
     description?: NullableStringFieldUpdateOperationsInput | string | null
     price?: FloatFieldUpdateOperationsInput | number
     status?: EnumListingStatusFieldUpdateOperationsInput | $Enums.ListingStatus
-    is_available?: BoolFieldUpdateOperationsInput | boolean
-    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    delivery_method?: EnumDeliveryMethodFieldUpdateOperationsInput | $Enums.DeliveryMethod
+    is_available?: BoolFieldUpdateOperationsInput | boolean
     updated_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -9468,8 +9468,8 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     stripe_session_id?: NullableStringFieldUpdateOperationsInput | string | null
     amount?: FloatFieldUpdateOperationsInput | number
-    transaction_status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    transaction_status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
     listing?: ListingUpdateOneRequiredWithoutTransactionsNestedInput
   }
 
@@ -9477,18 +9477,18 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     stripe_session_id?: NullableStringFieldUpdateOperationsInput | string | null
     amount?: FloatFieldUpdateOperationsInput | number
-    transaction_status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     listing_id?: StringFieldUpdateOperationsInput | string
+    transaction_status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
   }
 
   export type TransactionUncheckedUpdateManyWithoutBuyerInput = {
     id?: StringFieldUpdateOperationsInput | string
     stripe_session_id?: NullableStringFieldUpdateOperationsInput | string | null
     amount?: FloatFieldUpdateOperationsInput | number
-    transaction_status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     listing_id?: StringFieldUpdateOperationsInput | string
+    transaction_status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
   }
 
   export type ListingImageCreateManyListingInput = {
@@ -9500,17 +9500,17 @@ export namespace Prisma {
     id?: string
     model_url: string
     meshy_job_id?: string | null
-    model_status: $Enums.ModelStatus
     created_at?: Date | string
+    model_status?: $Enums.ModelStatus
   }
 
   export type TransactionCreateManyListingInput = {
     id?: string
     stripe_session_id?: string | null
     amount: number
-    transaction_status: $Enums.TransactionStatus
     created_at?: Date | string
     buyer_id: string
+    transaction_status?: $Enums.TransactionStatus
   }
 
   export type ListingImageUpdateWithoutListingInput = {
@@ -9532,32 +9532,32 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     model_url?: StringFieldUpdateOperationsInput | string
     meshy_job_id?: NullableStringFieldUpdateOperationsInput | string | null
-    model_status?: EnumModelStatusFieldUpdateOperationsInput | $Enums.ModelStatus
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    model_status?: EnumModelStatusFieldUpdateOperationsInput | $Enums.ModelStatus
   }
 
   export type ListingModelUncheckedUpdateWithoutListingInput = {
     id?: StringFieldUpdateOperationsInput | string
     model_url?: StringFieldUpdateOperationsInput | string
     meshy_job_id?: NullableStringFieldUpdateOperationsInput | string | null
-    model_status?: EnumModelStatusFieldUpdateOperationsInput | $Enums.ModelStatus
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    model_status?: EnumModelStatusFieldUpdateOperationsInput | $Enums.ModelStatus
   }
 
   export type ListingModelUncheckedUpdateManyWithoutListingInput = {
     id?: StringFieldUpdateOperationsInput | string
     model_url?: StringFieldUpdateOperationsInput | string
     meshy_job_id?: NullableStringFieldUpdateOperationsInput | string | null
-    model_status?: EnumModelStatusFieldUpdateOperationsInput | $Enums.ModelStatus
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    model_status?: EnumModelStatusFieldUpdateOperationsInput | $Enums.ModelStatus
   }
 
   export type TransactionUpdateWithoutListingInput = {
     id?: StringFieldUpdateOperationsInput | string
     stripe_session_id?: NullableStringFieldUpdateOperationsInput | string | null
     amount?: FloatFieldUpdateOperationsInput | number
-    transaction_status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    transaction_status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
     buyer?: UserUpdateOneRequiredWithoutTransactionsNestedInput
   }
 
@@ -9565,18 +9565,18 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     stripe_session_id?: NullableStringFieldUpdateOperationsInput | string | null
     amount?: FloatFieldUpdateOperationsInput | number
-    transaction_status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     buyer_id?: StringFieldUpdateOperationsInput | string
+    transaction_status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
   }
 
   export type TransactionUncheckedUpdateManyWithoutListingInput = {
     id?: StringFieldUpdateOperationsInput | string
     stripe_session_id?: NullableStringFieldUpdateOperationsInput | string | null
     amount?: FloatFieldUpdateOperationsInput | number
-    transaction_status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
     created_at?: DateTimeFieldUpdateOperationsInput | Date | string
     buyer_id?: StringFieldUpdateOperationsInput | string
+    transaction_status?: EnumTransactionStatusFieldUpdateOperationsInput | $Enums.TransactionStatus
   }
 
 
