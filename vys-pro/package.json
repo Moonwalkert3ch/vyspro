@@ -33,6 +33,7 @@
     "@types/pg": "^8.15.4",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@types/react-easy-crop": "^2.0.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
     "prettier": "^3.5.3",
