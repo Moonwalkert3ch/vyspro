@@ -1,49 +1,56 @@
 import { NextResponse } from 'next/server';
+import { auth } from '@clerk/nextjs/server';
+import { PrismaClient } from '@/src/generated/prisma';
+import { Storage } from '@google-cloud/storage';
 import path from 'path';
-import fs from 'fs';
 import os from 'os';
+import fs from 'fs';
 import { v4 as uuidv4 } from 'uuid';
-const { Storage } = require('@google-cloud/storage');
 
-const storage = new Storage({
-  projectId: process.env.GCP_PROJECT_ID,
-  keyFilename: path.join(process.cwd(), 'gcp-key.json'),
-});
-const bucket = storage.bucket(process.env.GCP_BUCKET_NAME as string);
+const prisma = new PrismaClient();
+const storage = new Storage();
+const bucket = storage.bucket(process.env.GCP_BUCKET_NAME!);
 
 export async function POST(req: Request) {
-  try {
-    const formData = await req.formData();
-    const files = formData.getAll('images') as File[];
+  const { userId } = await auth();
+  if (!userId) return new NextResponse('Unauthorized', { status: 401 });
 
-    const uploadedUrls: string[] = [];
+  const formData = await req.formData();
+  const listingId = formData.get('listingId');
+  if (typeof listingId !== 'string')
+    return new NextResponse('Missing listingId', { status: 400 });
 
-    for (const file of files) {
-      const arrayBuffer = await file.arrayBuffer();
-      const buffer = Buffer.from(arrayBuffer);
+  // Verify the listing belongs to this user
+  const listing = await prisma.listing.findUnique({
+    where: { id: listingId },
+    include: { users: true },
+  });
+  if (!listing || listing.users.clerk_id !== userId)
+    return new NextResponse('Forbidden', { status: 403 });
 
-      const uniqueName = `${uuidv4()}-${file.name}`;
-      const tempFilePath = path.join(os.tmpdir(), uniqueName);
-      fs.writeFileSync(tempFilePath, buffer);
+  const files = formData.getAll('images') as File[];
+  const uploadedUrls: string[] = [];
 
-      await bucket.upload(tempFilePath, {
-        destination: `uploads/${uniqueName}`,
-        metadata: {
-          contentType: file.type,
-          cacheControl: 'public, max-age=31536000',
-        },
-        public: true,
-      });
+  for (const file of files) {
+    const buffer = Buffer.from(await file.arrayBuffer());
+    const uniqueName = `${uuidv4()}-${file.name}`;
+    const tmpPath = path.join(os.tmpdir(), uniqueName);
+    fs.writeFileSync(tmpPath, buffer);
 
-      fs.unlinkSync(tempFilePath);
+    await bucket.upload(tmpPath, {
+      destination: `uploads/${uniqueName}`,
+      metadata: { contentType: file.type, cacheControl: 'public, max-age=31536000' },
+    });
+    fs.unlinkSync(tmpPath);
 
-      const publicUrl = `https://storage.googleapis.com/${bucket.name}/uploads/${uniqueName}`;
-      uploadedUrls.push(publicUrl);
-    }
+    const publicUrl = `https://storage.googleapis.com/${bucket.name}/uploads/${uniqueName}`;
+    uploadedUrls.push(publicUrl);
 
-    return NextResponse.json({ imageUrls: uploadedUrls });
-  } catch (error: unknown) {
-    console.error('Upload error:', error);
-    return NextResponse.json({ error: 'Failed to upload images.' }, { status: 500 });
+    // Link to DB
+    await prisma.listingImage.create({
+      data: { listing_id: listingId, image_url: publicUrl },
+    });
   }
+
+  return NextResponse.json({ imageUrls: uploadedUrls });
 }

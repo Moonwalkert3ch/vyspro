@@ -6,34 +6,34 @@ import { PrismaClient } from '@/src/generated/prisma';
 const prisma = new PrismaClient();
 
 export async function POST(req: Request) {
-  let userId: string;
+  // 1) Enforce Clerk auth
+  const { userId } = await auth();
+  if (!userId) return new NextResponse('Unauthorized', { status: 401 });
 
-  // Development bypass: skip Clerk auth in development
-  if (process.env.NODE_ENV === 'development') {
-    if (process.env.DEV_CLERK_ID) {
-      userId = process.env.DEV_CLERK_ID;
-    } else {
-      const testUser = await prisma.user.findFirst();
-      if (!testUser) {
-        return NextResponse.json({ error: 'No test user found in development.' }, { status: 500 });
-      }
-      userId = testUser.clerk_id;
-    }
-  } else {
-    const { userId: authUserId } = await auth();
-    if (!authUserId) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
-    userId = authUserId;
-  }
+  // 2) See if we already have this user in our DB
+  let user = await prisma.user.findUnique({
+    where: { clerk_id: userId },
+  });
 
-  // Ensure the user exists in our database
-  const user = await prisma.user.findUnique({ where: { clerk_id: userId } });
+  // 3) If not, pull from Clerk API and create
   if (!user) {
-    return NextResponse.json({ error: 'User not found' }, { status: 404 });
+    const clerkRes = await fetch(`https://api.clerk.com/v1/users/${userId}`, {
+      headers: { Authorization: `Bearer ${process.env.CLERK_SECRET_KEY}` },
+    });
+    if (!clerkRes.ok) {
+      console.error('Clerk lookup failed', await clerkRes.text());
+      return new NextResponse('Failed to sync user', { status: 500 });
+    }
+    const clerkUser = await clerkRes.json();
+    user = await prisma.user.create({
+      data: {
+        clerk_id: userId,
+        email: clerkUser.email_addresses[0].email_address,
+      },
+    });
   }
 
-  // Create a draft listing
+  // 4) Create the draft listing tied to that user
   const draft = await prisma.listing.create({
     data: {
       user_id: user.id,
@@ -45,8 +45,4 @@ export async function POST(req: Request) {
   });
 
   return NextResponse.json({ listingId: draft.id });
-}
-
-export async function GET() {
-  return NextResponse.json({ message: 'Initiate route is ready' });
 }
