@@ -35,12 +35,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 6.11.0
- * Query Engine version: 9c30299f5a0ea26a96790e13f796dc6094db3173
+ * Prisma Client JS version: 6.12.0
+ * Query Engine version: 8047c96bbd92db98a2abc7c9323ce77c02c89dbc
  */
 Prisma.prismaVersion = {
-  client: "6.11.0",
-  engine: "9c30299f5a0ea26a96790e13f796dc6094db3173"
+  client: "6.12.0",
+  engine: "8047c96bbd92db98a2abc7c9323ce77c02c89dbc"
 }
 
 Prisma.PrismaClientKnownRequestError = PrismaClientKnownRequestError;
@@ -196,7 +196,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/puzzle/code/vyspro/vys-pro/src/generated/prisma",
+      "value": "/home/moonwalker/nextjsApp/vys/vyspro/vys-pro/src/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -210,7 +210,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/puzzle/code/vyspro/vys-pro/prisma/schema.prisma",
+    "sourceFilePath": "/home/moonwalker/nextjsApp/vys/vyspro/vys-pro/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -218,13 +218,13 @@ const config = {
     "schemaEnvPath": "../../../.env"
   },
   "relativePath": "../../../prisma",
-  "clientVersion": "6.11.0",
-  "engineVersion": "9c30299f5a0ea26a96790e13f796dc6094db3173",
+  "clientVersion": "6.12.0",
+  "engineVersion": "8047c96bbd92db98a2abc7c9323ce77c02c89dbc",
   "datasourceNames": [
     "db"
   ],
   "activeProvider": "postgresql",
-  "postinstall": false,
+  "postinstall": true,
   "inlineDatasources": {
     "db": {
       "url": {
