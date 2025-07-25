@@ -96,6 +96,7 @@ export default function UploadImagePage() {
       if (!res.ok) throw new Error('Upload failed');
       const { imageUrls } = await res.json();
       sessionStorage.setItem('uploadedImageUrls', JSON.stringify(imageUrls));
+      console.log('Images uploaded successfully');
       router.push('/3d-model');
     } catch (err) {
       console.error(err);
